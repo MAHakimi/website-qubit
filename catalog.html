@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="catalogApp">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Catalogue | Qubit Asia</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/catalog.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="js/catalog.js"></script>
+  </head>
+
+  <body id="page-top" ng-controller="CatalogController">
+
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm">
+  <div class="container px-5">
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/img/company-logo3.png" alt="Qubit Asia Logo" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Solutions</a>
+          <ul class="dropdown-menu">
+            <li><h6 class="dropdown-header">Hospitality</h6></li>
+            <li><a class="dropdown-item" href="iptv.html">QBStar (IPTV)</a></li>
+            <li><a class="dropdown-item" href="pms.html">QBPms</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><h6 class="dropdown-header">Digital Signage</h6></li>
+            <li><a class="dropdown-item" href="signage.html">QBSign</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Company</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+            <li><a class="dropdown-item" href="values.html">Our Values</a></li>
+            <li><a class="dropdown-item" href="features.html">Platform Features</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarCatalogueDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Catalogue
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarCatalogueDropdown">
+                <li><a class="dropdown-item" href="catalog.html">Hardware Catalogue</a></li>
+                <li><a class="dropdown-item" href="softwarecatalog.html">Software Catalogue</a></li>
+            </ul>
+        </li>
+        <a class="nav-link" href="contact.html" target="_blank" rel="noopener noreferrer">Contact</a>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <header class="masthead" style="background-image: url(assets/img/sereverroom.png);">
+    <div class="container">
+      <h2 class="display-4 lh-1 mb-3">Catalogue</h2>
+      <p style="font-size: x-large;">Explore our curated selection of enterprise hardware and digital solutions, including servers, encodes, IPTV systems, and signage technology.</p>
+    </div>
+  </header>
+
+   <section class="py-4">
+  <div class="container px-5 text-center">
+    <style>
+      /* --- COLOR PALETTE DEFINITION --- */
+      :root {
+        --color-orange: #ff6600; /* Primary Brand Accent */
+        --color-black: #212529; /* Primary Text/Outline */
+      }
+      
+      /* --- FILTER BUTTON STYLES --- */
+      .btn-custom-filter {
+        border-radius: 0.25rem;
+        font-weight: 500;
+        padding: 0.375rem 1.25rem;
+        min-width: 100px;
+        transition: all 0.2s ease-in-out;
+      }
+
+      /* Active/Selected: Solid Orange with White Text */
+      .btn-custom-filter.active {
+        background-color: var(--color-orange); 
+        border-color: var(--color-orange);
+        color: white;
+      }
+
+      /* Inactive/Default: Outlined Black with Black Text */
+      .btn-custom-filter:not(.active) {
+        background-color: transparent;
+        border-color: var(--color-black);
+        color: var(--color-black);
+      }
+      .btn-custom-filter:not(.active):hover {
+          background-color: rgba(0, 0, 0, 0.05);
+      }
+      
+      /* --- CTA BUTTON STYLES --- */
+      /* Download PDF (Primary): Solid Black with White Text */
+      .btn-custom-download {
+        background-color: var(--color-black); 
+        border-color: var(--color-black);
+        color: white;
+      }
+      .btn-custom-download:hover {
+          background-color: var(--color-orange);
+          border-color: var(--color-orange);
+          color: white;
+      }
+
+      /* View PDF (Secondary): Outlined Orange with Orange Text */
+      .btn-custom-view {
+        background-color: transparent;
+        border-color: var(--color-orange);
+        color: var(--color-orange);
+      }
+       .btn-custom-view:hover {
+          background-color: var(--color-orange);
+          color: white;
+      }
+
+
+      /* --- LAYOUT STYLES: CRITICAL 2/5 (4/12) Image & 3/5 (8/12) Content --- */
+      .catalog-card {
+        border: 1px solid #dee2e6; 
+        border-radius: 0.25rem; 
+        margin-bottom: 20px; 
+        padding: 20px;
+        align-items: center; 
+      }
+      /* This container now reserves 2/5 of the card width on medium screens and up */
+      .catalog-card-image {
+        /* Remove fixed width to allow col-md-4 to dictate size */
+        min-width: unset; 
+        max-width: unset; 
+        height: 100%; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 15px; /* Added horizontal padding */
+      }
+      .catalog-card-image img {
+        max-height: 200px; /* Large image size maintained */
+        width: 100%;
+        object-fit: contain;
+      }
+      
+      .feature-list {
+        list-style: none;
+        padding-left: 0;
+        margin-left: 0;
+      }
+
+      .feature-list li {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 8px;
+        font-size: 0.95rem;
+      }
+      
+      .feature-list .text-success {
+          color: #198754 !important;
+      }
+      
+      /* Mobile styling for stacking */
+      @media (max-width: 767.98px) {
+          .catalog-card-image {
+             /* On mobile, use full width for image */
+             width: 100%;
+             max-width: 100%; 
+          }
+      }
+
+      
+
+    </style>
+    <div class="btn-group mb-4" role="group">
+      <button class="btn btn-custom-filter" ng-class="{'active': filterCategory === ''}" ng-click="filterCategory = ''">All</button>
+      <button class="btn btn-custom-filter" ng-class="{'active': filterCategory === 'Server'}" ng-click="filterCategory = 'Server'">Servers</button>
+      <button class="btn btn-custom-filter" ng-class="{'active': filterCategory === 'Encoder'}" ng-click="filterCategory = 'Encoder'">Encoders</button>
+    </div>
+  </div>
+</section>
+
+<section class="py-4">
+  <div class="container px-5">
+    <div class="row" ng-repeat="item in allCatalogItems | filter:{ category: filterCategory } | limitTo: visibleLimit">
+      <div class="col-12">
+        <div class="catalog-card d-flex flex-column flex-md-row shadow-sm">
+          
+          <div class="col-md-4 mb-3 mb-md-0 catalog-card-image">
+            <img ng-src="{{item.image}}" alt="{{item.title}}" class="img-fluid rounded-start">
+          </div>
+
+          <div class="col-md-8 catalog-body">
+            <span class="badge mb-2" ng-class="{'bg-primary': item.category === 'Server', 'bg-success': item.category === 'Encoder', 'bg-secondary': !item.category}">{{item.category}}</span>
+            <h3 class="catalog-title">{{item.title}}</h3>
+            <p>{{item.description}}</p>
+
+           <ul class="mb-3 feature-list">
+              <li ng-repeat="feature in item.features">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>{{feature}}
+              </li>
+            </ul>
+
+            <div class="catalog-buttons">
+              <a class="btn mb-2 mb-md-0 btn-custom-view" ng-href="{{item.pdf}}" target="_blank">
+                <i class="bi bi-eye"></i> View PDF
+              </a>
+              <a class="btn btn-custom-download" ng-href="{{item.pdf}}" download>
+                <i class="bi bi-download"></i> Download PDF
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center text-muted" ng-if="(allCatalogItems | filter:{ category: filterCategory }).length === 0">
+      No catalogue items available in this category.
+    </div>
+
+    <div class="text-center mt-4" ng-if="(allCatalogItems | filter:{ category: filterCategory }).length > visibleLimit">
+      <button class="btn btn-outline-secondary" ng-click="loadMore()">Load More</button>
+    </div>
+
+  </div>
+</section>
+<section class="py-5 text-white d-flex align-items-center position-relative" style="background: url('assets/img/BAnner.jpg') center center/cover no-repeat; min-height: 350px;">
+    
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(2px);"></div>
+    
+    <div class="container position-relative z-2 px-4">
+        <div class="row">
+            <div class="col-lg-8">
+                
+                <h2 class="display-4 fw-bold mb-3 text-shadow">
+                    Upgrade your Hospitality<br>Experience Today
+                </h2>
+                
+                <p class="lead mb-4 text-shadow" style="font-size: 1.1rem;">
+                    Together, let's transform the way you serve your guests with a bespoke solution
+                </p>
+                
+                <a href="contact.html" class="btn btn-outline-light btn-lg" style="border-radius: 8px;">
+                    Get a quotation now
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer" style="background-color: #000000;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <img src="assets/img/company-logo3.png" alt="Qubit Asia Logo" class="mb-4" height="50">
+                <p style="color: #cccccc;">Transforming hospitality experiences through innovative technology solutions.</p>
+            </div>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h5 class="text-white mb-4">Contact Info</h5>
+                <p style="color: #cccccc;"><i class="bi bi-geo-alt-fill me-2"></i>31, Jalan BK 5a/3a, Bandar Kinrara 5, 47180 Puchong, Selangor, Malaysia</p>
+                <p style="color: #cccccc;"><i class="bi bi-telephone-fill me-2"></i>03-8075 0659</p>
+                <p style="color: #cccccc;"><i class="bi bi-envelope-fill me-2"></i>hello@qubit.asia</p>
+            </div>
+            <div class="col-lg-4">
+                <h5 class="text-white mb-4">Connect With Us</h5>
+                <a href="https://www.linkedin.com/company/qubit-interactive/" target="_blank" class="social-icon">
+                    <i class="bi bi-linkedin" style="color: #ffffff;"></i>
+                </a>
+            </div>
+        </div>
+        <hr class="my-4" style="background-color: #333333;">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="mb-0" style="color: #cccccc;">© 2023 Qubit Asia. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

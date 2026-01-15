@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Our Features | Qubit Asia" />
+  <meta name="author" content="Qubit Asia" />
+  <title>Our Features | Qubit Asia</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+ 
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Google Fonts -->
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Custom CSS -->
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <!-- Custom Styles -->
+  <style>
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa, #e4ebf5);
+  margin: 0;
+  padding: 0;
+   color: #333;
+}
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
+
+     .navbar {
+  background-color: rgba(0, 0, 0, 0.85);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+}
+
+.navbar-brand img {
+  height: 60px;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-item.active .nav-link {
+  color: #007bff;
+}
+
+.navbar-nav .nav-link.active, 
+.navbar-nav .nav-link.show {
+  color: white/* Inherit color for active/show links */
+}
+
+.dropdown-menu {
+  background-color: #1f1f1f;
+  border: none;
+}
+
+.dropdown-menu .dropdown-item {
+  color: white;
+  transition: background 0.2s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #343a40;
+}
+
+.dropdown-header {
+  color: #adb5bd;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+/* Improve visibility of navbar toggler icon on dark background */
+.navbar-toggler {
+  border: none;
+  outline: none;
+  padding: 0.5rem 0.75rem;
+}
+
+.navbar-toggler-icon {
+  width: 2rem;
+  height: 2rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  /* High-contrast white hamburger icon */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+
+    header.masthead {
+      background: url('assets/img/main/features.jpg') no-repeat center center;
+      background-size: cover;
+      height: 80vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    header.masthead::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      backdrop-filter: blur(6px);
+      background-color: rgba(0, 0, 0, 0.55);
+      z-index: 1;
+    }
+
+    header.masthead .container {
+      position: relative;
+      z-index: 2;
+      color: white;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+
+    .section-header p {
+      font-size: 1.2rem;
+      color: #6c757d;
+    }
+
+
+    .filter-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .filter-btn {
+       padding: 8px 20px;
+  border: 2px solid #ff6600;
+  background: transparent;
+  color: #ff6600;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: #ff6600;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 20px;
+    }
+
+    .feature-card {
+       background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  position: relative;
+  overflow: hidden;
+  border-left: 5px solid #ff6600;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(255,102,0,0.1) 0%, rgba(255,102,0,0) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .feature-card:hover::before {
+      opacity: 1;
+    }
+
+    .feature-card i {
+       font-size: 2.5rem;
+       color: #ff6600;
+       margin-bottom: 20px;
+       transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .feature-card:hover i {
+      transform: rotate(10deg) scale(1.1);
+      color: #ff7a00;
+
+    }
+
+    .feature-card h5 {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+      color: black;
+    }
+
+    .feature-card h5::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: #ff6600;
+      transition: width 0.3s ease;
+    }
+
+    .feature-card:hover h5::after {
+      width: 80px;
+    }
+
+    /* Pulse animation for featured cards */
+    .feature-card.featured {
+      animation: pulse 2s infinite;
+    }
+    .feature-card .badge {
+  background: black !important;
+  color: #ff6600;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(0,123,255,0.4); }
+      70% { box-shadow: 0 0 0 15px rgba(0,123,255,0); }
+      100% { box-shadow: 0 0 0 0 rgba(0,123,255,0); }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+      .features-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+/* === Navbar adjustments for smaller screens === */
+@media (max-width: 576px) {
+  .navbar-nav .nav-link {
+    font-size: 0.95rem;
+  }
+
+  .navbar-brand img {
+    height: 50px;
+  }
+}
+    /* ===== FOOTER ===== */
+.footer {
+  background-color: #000000;
+  color: #cccccc;
+  padding: 4rem 0 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-top: auto; /* Push footer to bottom */
+
+}
+
+.footer p {
+  color: #cccccc;
+}
+
+.footer hr {
+  background-color: #333333;
+}
+
+.footer i {
+  vertical-align: middle;
+}
+
+.footer a {
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer a:hover {
+  color: #ffffff;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: #007bff;
+  transform: translateY(-3px);
+}
+  </style>
+
+</head>
+
+<body id="page-top">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
+  <div class="container px-5">
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/img/company-logo3.png" alt="Qubit Asia Logo" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        
+        <!-- Solutions Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Solutions</a>
+          <ul class="dropdown-menu">
+            <li><h6 class="dropdown-header">Hospitality</h6></li>
+            <li><a class="dropdown-item" href="iptv.html">QBStar (IPTV)</a></li>
+            <li><a class="dropdown-item" href="pms.html">QBPms</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><h6 class="dropdown-header">Digital Signage</h6></li>
+            <li><a class="dropdown-item" href="signage.html">QBSign</a></li>
+          </ul>
+        </li>
+
+        <!-- Company Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Company</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+            <li><a class="dropdown-item" href="values.html">Our Values</a></li>
+            <li><a class="dropdown-item" href="features.html">Platform Features</a></li>
+          </ul>
+        </li>
+
+        <!-- Catalog + Contact -->
+        <li class="nav-item"><a class="nav-link" href="catalog.html">Catalogue</a></li>
+        <a class="nav-link" href="contact.html" target="_blank" rel="noopener noreferrer">Contact</a>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- Header -->
+  <header class="masthead">
+    <div class="container">
+      <h2 class="display-4 lh-1 mb-3">Our Features</h2>
+      <p style="font-size: x-large;">Explore the innovative solutions Qubit Asia offers to the hospitality industry.</p>
+    </div>
+  </header>
+
+    <div class="container py-5">
+    <div class="section-header">
+      <h2>Key Features</h2>
+      <p>Explore Qubit Asia's innovative solutions</p>
+    </div>
+
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">All Features</button>
+      <button class="filter-btn" data-filter="hotel">Hotel Solutions</button>
+      <button class="filter-btn" data-filter="guest">Guest Experience</button>
+      <button class="filter-btn" data-filter="media">Media & Content</button>
+    </div>
+
+    <div class="features-container">
+      <div id="featuresGrid" class="features-grid">
+        <!-- Feature cards will be inserted here -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const features = [
+      { 
+        title: "TV Portal Landing Page", 
+        description: "Customized TV Portal Landing page for branding and hotel information access.", 
+        icon: "bi-house-door",
+        category: "hotel",
+        featured: true
+      },
+      { 
+        title: "Hotel Information", 
+        description: "Hotel information page on TV.", 
+        icon: "bi-info-circle",
+        category: "hotel"
+      },
+      { 
+        title: "Hotel Compendium", 
+        description: "Hotel A to Z directory guide on TV.", 
+        icon: "bi-book",
+        category: "hotel"
+      },
+      { 
+        title: "Hotel Promotion", 
+        description: "Promotional information can be pushed to TV in banner or full screen mode.", 
+        icon: "bi-bullhorn",
+        category: "hotel"
+      },
+      { 
+        title: "In-Room Dining", 
+        description: "In-Room Dining information.", 
+        icon: "bi-cup",
+        category: "guest"
+      },
+      { 
+        title: "TV Guide", 
+        description: "TV channel information with category, eliminating printed handouts in the room.", 
+        icon: "bi-tv",
+        category: "media"
+      },
+      { 
+        title: "World Clock", 
+        description: "World clock display for international travelers.", 
+        icon: "bi-clock",
+        category: "guest"
+      },
+      { 
+        title: "Weather", 
+        description: "Local weather forecast information on TV.", 
+        icon: "bi-cloud-sun",
+        category: "guest"
+      },
+      { 
+        title: "Places of Interest", 
+        description: "Places of interest around the hotel.", 
+        icon: "bi-geo-alt",
+        category: "guest"
+      },
+      { 
+        title: "WiFi Information", 
+        description: "WiFi access information on TV.", 
+        icon: "bi-wifi",
+        category: "guest"
+      },
+      { 
+        title: "QR Code", 
+        description: "Embedded Hotel Compendium in QR code.", 
+        icon: "bi-qr-code",
+        category: "hotel"
+      },
+      { 
+        title: "Wake-Up Alarm", 
+        description: "Housekeeping status update on TV.", 
+        icon: "bi-alarm",
+        category: "guest"
+      },
+      { 
+        title: "Personalized Welcome Page", 
+        description: "PMS integrated welcome page on TV upon guest check-in.", 
+        icon: "bi-person-circle",
+        category: "guest",
+        featured: true
+      },
+      { 
+        title: "Guest Message", 
+        description: "Front desk operator can send messages to each room TV via PMS.", 
+        icon: "bi-chat-left-text",
+        category: "guest"
+      },
+      { 
+        title: "Billing View", 
+        description: "Bill information view on TV (PMS integrated).", 
+        icon: "bi-file-earmark",
+        category: "guest"
+      },
+      { 
+        title: "Express Checkout", 
+        description: "Guest can check out using TV remote (PMS integrated).", 
+        icon: "bi-credit-card",
+        category: "guest",
+        featured: true
+      },
+      { 
+        title: "Chromecast Management", 
+        description: "Stream apps like Netflix & YouTube from your device to the TV.", 
+        icon: "bi-cast",
+        category: "media"
+      },
+      { 
+        title: "Smart TV App", 
+        description: "YouTube and Netflix. Guest log-in info removed upon check-out.", 
+        icon: "bi-tv",
+        category: "media"
+      },
+      { 
+        title: "Digital Signage Support", 
+        description: "Public display signage at lobby, restaurants, etc.", 
+        icon: "bi-signpost",
+        category: "hotel"
+      },
+      { 
+        title: "Flight Info", 
+        description: "Flight arrival & departure info.", 
+        icon: "bi-airplane-engines",
+        category: "guest"
+      },
+      { 
+        title: "Video on Demand", 
+        description: "VOD contents like Hollywood & Disney movies.", 
+        icon: "bi-film",
+        category: "media",
+        featured: true
+      },
+      { 
+        title: "Screen Saver", 
+        description: "Slideshows run when no action on the landing page.", 
+        icon: "bi-image",
+        category: "media"
+      },
+      { 
+        title: "Hotel Mode Control", 
+        description: "Control TV's volume and settings remotely.", 
+        icon: "bi-volume-up",
+        category: "hotel"
+      },
+      { 
+        title: "Channel Management", 
+        description: "Manage TV channel tuning and info remotely.", 
+        icon: "bi-gear",
+        category: "hotel"
+      }
+    ];
+
+    function renderFeatures(filter = 'all') {
+      const featuresGrid = document.getElementById("featuresGrid");
+      featuresGrid.innerHTML = "";
+
+      const filteredFeatures = filter === 'all' 
+        ? features 
+        : features.filter(f => f.category === filter);
+
+      filteredFeatures.forEach(feature => {
+        const card = document.createElement("div");
+        card.classList.add("feature-card");
+        if (feature.featured) card.classList.add("featured");
+        card.setAttribute('data-category', feature.category);
+        
+        card.innerHTML = `
+          <i class="bi ${feature.icon}"></i>
+          <h5>${feature.title}</h5>
+          <p>${feature.description}</p>
+          <span class="badge bg-primary position-absolute top-0 end-0 m-2">${feature.category.toUpperCase()}</span>
+        `;
+        featuresGrid.appendChild(card);
+      });
+
+      // Add animation to cards
+      const cards = document.querySelectorAll('.feature-card');
+      cards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.1}s`;
+      });
+    }
+
+    // Initialize features grid
+    window.onload = () => {
+      renderFeatures();
+      
+      // Add filter button functionality
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          renderFeatures(this.dataset.filter);
+        });
+      });
+    };
+
+    // Animation on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      const cards = document.querySelectorAll('.feature-card');
+      cards.forEach(card => {
+        observer.observe(card);
+      });
+    });
+  </script>
+
+
+<footer class="footer" style="background-color: #000000;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <img src="assets/img/company-logo3.png" alt="Qubit Asia Logo" class="mb-4" height="50">
+                <p style="color: #cccccc;">Transforming hospitality experiences through innovative technology solutions.</p>
+            </div>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h5 class="text-white mb-4">Contact Info</h5>
+                <p style="color: #cccccc;"><i class="bi bi-geo-alt-fill me-2"></i>31, Jalan BK 5a/3a, Bandar Kinrara 5, 47180 Puchong, Selangor, Malaysia</p>
+                <p style="color: #cccccc;"><i class="bi bi-telephone-fill me-2"></i>03-8075 0659</p>
+                <p style="color: #cccccc;"><i class="bi bi-envelope-fill me-2"></i>hello@qubit.asia</p>
+            </div>
+            <div class="col-lg-4">
+                <h5 class="text-white mb-4">Connect With Us</h5>
+                <a href="https://www.linkedin.com/company/qubit-interactive/" target="_blank" class="social-icon">
+                    <i class="bi bi-linkedin" style="color: #ffffff;"></i>
+                </a>
+            </div>
+        </div>
+        <hr class="my-4" style="background-color: #333333;">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="mb-0" style="color: #cccccc;">© 2023 Qubit Asia. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Bootstrap JS (with Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

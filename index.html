@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Qubit Interactive - IPTV & Digital Signage Solutions for Hospitality" />
+  <meta name="author" content="Qubit Asia" />
+  <title>Qubit Asia</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  
+  <link href="css/styles.css" rel="stylesheet" />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+
+  <style>
+/* ===== BASE STYLES ===== */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa, #e4ebf5);
+  margin: 0;
+  padding: 0;
+   color: #333;
+}
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
+/* ===== NAVIGATION ===== */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.85);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+}
+
+.navbar-brand img {
+  height: 60px;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-link.active, 
+.navbar-nav .nav-link.show {
+  color: #007bff;
+}
+
+.dropdown-menu {
+  background-color: #1f1f1f;
+  border: none;
+}
+
+.dropdown-menu .dropdown-item {
+  color: white;
+  transition: background 0.2s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #343a40;
+}
+
+.dropdown-header {
+  color: #adb5bd;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.navbar-toggler {
+  border: none;
+  outline: none;
+  padding: 0.5rem 0.75rem;
+}
+
+.navbar-toggler-icon {
+  width: 2rem;
+  height: 2rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* ===== HEADER/MASTHEAD ===== */
+.masthead {
+  text-align: center;
+  padding: 6rem 0;
+}
+
+.masthead h2 {
+  font-size: 3.2rem;
+  letter-spacing: -0.5px;
+  margin-bottom: 1.5rem;
+}
+
+.masthead p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== CARDS & COMPONENTS ===== */
+.solution-card {
+  transition: transform 0.2s ease;
+}
+
+.solution-card:hover {
+  transform: translateY(-10px);
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.card-img-container {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.card-img-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* ===== SECTION BACKGROUNDS ===== */
+.bg-our-solutions {
+  background: linear-gradient(135deg, #007bff, #00aaff);
+}
+
+.bg-light {
+  background-color: #f8f9fa;
+}
+/* ===== KEEP SHADOW ONLY ON SECTION HEADING & TAGLINE ===== */
+.bg-our-solutions h3,
+.bg-our-solutions > p {
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6); /* adjust as needed */
+}
+
+/* ===== REMOVE SHADOWS INSIDE CARDS ===== */
+.solution-card,
+.solution-card * {
+  text-shadow: none !important;
+  box-shadow: none !important;
+}
+
+
+/* ===== PARTNER SECTION - SWIPER STYLES OVERRIDE ===== */
+#partners {
+  background-color: #f8f9fa;
+  padding: 80px 0;
+  background-image: none;
+}
+
+/* Updated Header Style for "Trusted Partner of" */
+.section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.1rem; 
+  font-weight: 600;
+  color: #333;
+}
+
+/* Swiper Container Styling */
+.partner-swiper {
+    width: 100%;
+    height: auto;
+    padding-bottom: 40px; /* Space for pagination dots */
+    /* Adjust margins if needed to keep in line with container padding */
+}
+
+/* Individual Logo Slide Styling (replacing .partner-item CSS) */
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    height: 100px; /* Uniform height for logo boxes */
+    padding: 15px;
+    box-sizing: border-box;
+    transition: transform 0.3s;
+}
+
+.swiper-slide:hover {
+    transform: translateY(-5px); /* subtle hover effect */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the image content inside the slide */
+.partner-logo-img {
+    max-width: 90%; 
+    max-height: 90%;
+    object-fit: contain;
+    filter: grayscale(10%); /* Subtle effect */
+}
+
+/* Swiper Pagination Customization (Dots, replacing .indicator-dot CSS) */
+.swiper-pagination-bullet {
+    background: #ced4da; /* Light gray for inactive dots */
+    opacity: 1;
+    width: 30px; /* Wider dot */
+    height: 6px; /* Shorter dot */
+    border-radius: 3px;
+    transition: background-color 0.3s, width 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+    background: #333333; /* Dark/Black for the active dot */
+    width: 40px;
+}
+
+
+/* Style the hardware cards */
+.hardware-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); 
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 0;
+    transition: all 0.3s ease;
+    height: 100%;
+    overflow: hidden; 
+    text-decoration: none !important;
+    color: inherit;
+}
+
+/* Image Container Styling */
+.hardware-card-img-container {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7f7f7; 
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+/* Card Body Content */
+.hardware-card-body {
+    padding: 0 1.5rem 0.5rem;
+    text-align: center;
+}
+/* Styles for the dot indicators */
+.carousel-indicators-dots {
+    text-align: center;
+    padding-top: 20px;
+}
+.carousel-indicator-dot {
+    display: inline-block;
+    width: 30px;
+    height: 6px;
+    margin: 0 3px;
+    background-color: #e0e0e0;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.carousel-indicator-dot.active {
+    background-color: #333333;
+    width: 40px;
+}
+
+.footer {
+  background-color: #000000;
+  color: #cccccc;
+  padding: 4rem 0 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.footer p {
+  color: #cccccc;
+}
+
+.footer hr {
+  background-color: #333333;
+}
+
+.footer i {
+  vertical-align: middle;
+}
+
+.footer a {
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer a:hover {
+  color: #ffffff;
+}
+
+a {
+  /* This is the core rule that removes underlines globally */
+  text-decoration: none !important; 
+  color: inherit; 
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  text-decoration: none !important; 
+  opacity: 0.9; 
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: #007bff;
+  transform: translateY(-3px);
+}
+        
+p {
+  margin-bottom: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.card-text, .small-text {
+  line-height: 1.6;
+}
+
+.bg-our-solutions .card-img-container {
+    /* Height remains the same */
+    height: 220px; 
+    /* Remove bottom margin/padding */
+    margin-bottom: 0; 
+    /* Ensure the container is flush with the card edges */
+    border-radius: 8px 8px 0 0; 
+    /* The white space you saw was likely the container's background overflow */
+    overflow: hidden; 
+    /* Remove any flex center alignment that might add padding */
+    display: block; 
+}
+
+.card-img-container img {
+  /* Image must span 100% of the container width and height */
+  width: 100%;
+  height: 100%; 
+  /* Use 'cover' to ensure the image fills the container completely, cutting off edges if necessary,
+     rather than showing white background (which 'contain' does). */
+  object-fit: cover; 
+}
+
+/* --- Core Styling for the Solutions Section --- */
+
+
+/* Card Styling */
+.bg-our-solutions .card {
+  background-color: white; 
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Make the image container flush with the card and set height */
+.bg-our-solutions .card-img-container {
+    height: 220px; 
+    margin-bottom: 0; 
+    border-radius: 8px 8px 0 0; 
+    overflow: hidden; 
+    display: block; 
+}
+
+.bg-our-solutions .card-body {
+  /* Set to standard padding */
+  padding: 1.5rem 1.5rem 0; 
+  text-align: center;
+}
+
+.bg-our-solutions .card-title {
+  margin-bottom: 0.75rem;
+}
+
+.bg-our-solutions .lead {
+  margin-bottom: 0.5rem;
+}
+
+/* Crucial: Ensure the image fills its container completely */
+.card-img-container img {
+  width: 100%;
+  height: 100%; 
+  object-fit: cover; /* Forces image to cover the area, preventing white space */
+}
+
+.card.h-100.shadow-sm h6 {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+.card-hover .card-body {
+  padding: 1.5rem;
+}
+
+.card-hover .card-title {
+  margin: 1rem 0 0.75rem;
+}
+/* This replaces your .card-img-container */
+.solution-card-img-wrapper {
+    width: 100%;
+    /* Enforces a 16:9 aspect ratio. Adjust (e.g., 4/3) if needed. */
+    aspect-ratio: 16 / 9; 
+    overflow: hidden; /* Ensures image corners match card radius */
+}
+
+.solution-card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    /* This is the "fullpic" command. It fills the container, cropping as necessary. */
+    object-fit: cover; 
+    object-position: center; /* Ensures cropping is centered */
+}
+
+/* Ensure the card itself clips the image corners if the card is rounded */
+.solution-card {
+    overflow: hidden;
+}
+/* --- Button Styling --- */
+.btn-solutions {
+  display: block; 
+  width: 90%;
+  margin: 0 auto 15px; 
+  padding: 10px 20px;
+  background-color: #f77a2e; /* Orange color */
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-solutions:hover {
+  background-color: #e56a1d; 
+  color: white;
+}
+
+
+/* Content container max-width for better reading */
+.container {
+  max-width: 1200px;
+}
+
+/* ===== READABILITY IMPROVEMENTS ===== */
+/* Improved text contrast for better readability */
+.text-dark {
+  color: #222 !important;
+}
+
+.text-muted {
+  color: #555 !important; /* Darker for better contrast */
+}
+
+/* Better spacing for content sections */
+.content-section {
+  padding: 4rem 0;
+}
+
+/* Improved paragraph spacing */
+.lead {
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+/* Better card text contrast */
+.card {
+  color: #333;
+}
+
+
+
+/* Better text sizing for mobile */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px; /* Base font size for mobile */
+    line-height: 1.6;
+  }
+  
+  .card-text, .small-text {
+    font-size: 0.95rem;
+  }
+}
+
+/* ===== RESPONSIVE STYLES (Swiper-specific adjustments) ===== */
+@media (max-width: 1200px) {
+  /* Adjusted for Swiper, removing obsolete rules */
+}
+
+@media (max-width: 992px) {
+  /* Adjusted for Swiper, removing obsolete rules */
+  .section-header h3 {
+    font-size: 2.5rem;
+  }
+  /* ... other non-partner specific rules remain ... */
+  
+  .masthead h2 {
+    font-size: 2.5rem;
+  }
+  
+  .masthead p {
+    font-size: 1.1rem;
+  }
+  
+  .section-header h3 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .masthead {
+    padding: 4rem 2rem;
+  }
+  .masthead h2 {
+    font-size: 2rem;
+  }
+  .masthead p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .solution-card {
+    margin-bottom: 1rem;
+  }
+  /* ... other non-partner specific rules remain ... */
+  
+  .section-header h3 {
+    font-size: 1.8rem;
+  }
+  #partners {
+    padding: 60px 0;
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-nav .nav-link {
+    font-size: 0.95rem;
+  }
+  .navbar-brand img {
+    height: 50px;
+  }
+  /* ... other non-partner specific rules remain ... */
+  
+  #partners {
+    padding: 50px 0;
+  }
+  
+  .contact-popup-container {
+    bottom: 20px;
+    right: 20px;
+  }
+  /* ... other non-partner specific rules remain ... */
+}
+</style>
+</head>
+<body id="page-top">
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm">
+  <div class="container px-5">
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/img/company-logo3.png" alt="Qubit Asia Logo" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Solutions</a>
+          <ul class="dropdown-menu">
+            <li><h6 class="dropdown-header">Hospitality</h6></li>
+            <li><a class="dropdown-item" href="iptv.html">QBStar (IPTV)</a></li>
+            <li><a class="dropdown-item" href="pms.html">QBPms</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><h6 class="dropdown-header">Digital Signage</h6></li>
+            <li><a class="dropdown-item" href="signage.html">QBSign</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Company</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+            <li><a class="dropdown-item" href="values.html">Our Values</a></li>
+            <li><a class="dropdown-item" href="features.html">Platform Features</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarCatalogueDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Catalogue
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarCatalogueDropdown">
+                <li><a class="dropdown-item" href="catalog.html">Hardware Catalogue</a></li>
+                <li><a class="dropdown-item" href="softwarecatalog.html">Software Catalogue</a></li>
+            </ul>
+        </li>
+        <a class="nav-link" href="contact.html" target="_blank" rel="noopener noreferrer">Contact</a>
+      </ul>
+    </div>
+  </div>
+</nav>
+<header class="masthead text-white vh-100 d-flex align-items-center position-relative" style="background: url('assets/img/main/header2.jpg') center center/cover no-repeat;">
+  <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 1;"></div>
+
+  <div class="container position-relative z-2 px-4 d-flex align-items-center h-100">
+    <div class="text-start" style="max-width: 650px;">
+      
+      <h2 class="display-3 fw-bold mb-4 text-white text-shadow" style="text-align: left">Innovative Hospitality Solutions</h2>
+      
+      <p class="lead text-white mb-5 text-shadow" style="line-height: 1.6; text-align: justify;">
+        QUBIT INTERACTIVE provides visual communication and marketing solutions integrated with smart displays. We specialize in IPTV & digital signage applications for the hospitality industry. We are the preferred solution partner for Samsung & LG hospitality TVs, with projects in Malaysia, Korea, Thailand, Vietnam & Cambodia.
+      </p>
+      
+      <div>
+        <a href="about.html" class="btn btn-outline-light btn-lg">About Us</a>
+      </div>
+    </div>
+  </div>
+</header>
+<section id="partners" class="py-5 bg-light content-section">
+  <div class="container">
+
+    <h3 class="text-center text-dark mb-5">Trusted Partner Of</h3>
+    
+    <div class="swiper partner-swiper">
+        <div class="swiper-wrapper">
+            
+            <div class="swiper-slide">
+                <img class="partner-logo-img" src="assets/img/main/lgweb.png" alt="LG webOS Logo" />
+            </div>
+            
+            <div class="swiper-slide">
+                <img class="partner-logo-img" src="assets/img/main/samung-logo.png" alt="Samsung Logo" />
+            </div>
+            
+            <div class="swiper-slide">
+                <img class="partner-logo-img" src="assets/img/main/TM.png" alt="TM Logo" />
+            </div>
+            
+            <div class="swiper-slide">
+                <img class="partner-logo-img" src="assets/img/main/airtime.png" alt="airtime Logo" />
+            </div>
+            
+            <div class="swiper-slide">
+                <img class="partner-logo-img" src="assets/img/main/astro.png" alt="astro Logo" />
+            </div>
+            
+            <div class="swiper-slide">
+                <img class="partner-logo-img" src="assets/img/main/Vision-Four.png" alt="Vision Four Logo" />
+            </div>
+
+        </div>
+        
+        <div class="swiper-pagination"></div>
+        
+    </div>
+    
+    </div>
+</section>
+<hr class="m-0">
+<section class="py-5 bg-our-solutions content-section">
+    <div class="container px-5">
+        <h3 class="text-center mb-2 text-white">Our Solutions</h3>
+        <p class="text-center fw-normal text-white mb-5" style="font-size: 1.1rem; line-height: 1.5;">
+            We offer customised smart solutions for Hospitality TV & Digital Signage
+        </p>
+
+        <div class="row row-cols-1 row-cols-md-3 g-5">
+
+            <div class="col d-flex">
+                <div class="card solution-card h-100 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="solution-card-img-wrapper">
+                        <img src="assets/img/Asaimockup (1).png" alt="QBStar Hospitality TV Solution">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">QBStar</h5>
+                        <p class="lead fw-normal small-text text-muted">Hospitality TV solution integrated with LG & Samsung smart TV</p>
+                        <a href="iptv.html" class="btn-solutions text-decoration-none">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col d-flex">
+                <div class="card solution-card h-100 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="solution-card-img-wrapper">
+                        <img src="assets/img/newsignageqbpms.png" alt="QBSign Digital Signage">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">QBSign</h5>
+                        <p class="lead fw-normal small-text text-muted">Digital signage solution for dynamic content display</p>
+                        <a href="signage.html" class="btn-solutions text-decoration-none">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col d-flex">
+                <div class="card solution-card h-100 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="solution-card-img-wrapper">
+                        <img src="assets/img/remove redundant task.png" alt="QBPms PMS Integration">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">QBPMS</h5>
+                        <p class="lead fw-normal small-text text-muted">PMS Integration for hospitality TV, providing personalised service</p>
+                        <a href="pms.html" class="btn-solutions text-decoration-none">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<hr class="m-0">
+<section class="py-5 content-section" style= "background: linear-gradient(to bottom right, #f8f9fa, #e9ecef);">
+  <div class="container px-4">
+    <h3 class="text-center text-dark mb-2">Our Expertise</h3>
+    <p class="text-center fw-normal text-black mb-5" style="font-size: 1.1rem; line-height: 1.5;">
+      With over a decade worth of experience we offer unparalelled value to our clients
+    </p>
+    <div class="row g-4">
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-0 text-center p-4 hover-shadow transition" data-aos="zoom-in" data-aos-delay="100">
+          <div class="text-primary mb-3">
+            <i class="bi-tv display-4"></i>
+          </div>
+          <h6 class="fw-bold text-dark mb-2">Smart TV Expertise</h6>
+          <p class="text-muted small mb-0">More data & experience with Hospitality Smart TV, since 2014</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-0 text-center p-4 hover-shadow transition" data-aos="zoom-in" data-aos-delay="200">
+          <div class="text-success mb-3">
+            <i class="bi-headset display-4"></i>
+          </div>
+          <h6 class="fw-bold text-dark mb-2">Local Support</h6>
+          <p class="text-muted small mb-0">Direct support from local R&D team</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-0 text-center p-4 hover-shadow transition" data-aos="zoom-in" data-aos-delay="300">
+          <div class="text-warning mb-3">
+            <i class="bi-tools display-4"></i>
+          </div>
+          <h6 class="fw-bold text-dark mb-2">Partnerships</h6>
+          <p class="text-muted small mb-0">Closely working with smart TV manufacturers</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-0 text-center p-4 hover-shadow transition" data-aos="zoom-in" data-aos-delay="400">
+          <div class="text-danger mb-3">
+            <i class="bi-globe-asia-australia display-4"></i>
+          </div>
+          <h6 class="fw-bold text-dark mb-2">Trusted Track Record</h6>
+          <p class="text-muted small mb-0">Proven commercial site references with global & local brands in Malaysia</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="py-5 content-section" style="background-color: white;">
+  <div class="container px-4">
+    <div class="row align-items-center g-5">
+
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="shadow-lg rounded-3 overflow-hidden" style="max-width: 550px; margin: 0 auto;">
+          <img src="assets/img/coupleshotel.jpeg" alt="Couple enjoying room service" class="img-fluid" style="border-radius: 12px; width: 100%; height: auto;">
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-left">
+        
+        <h2 class="display-5 fw-bold mb-3" style="color: #333;">
+          Elevate Your Guest's <span style="color: #f77a2e;">Experience</span>
+        </h2>
+        
+        <p class="lead" style="font-size: 1.1rem; line-height: 1.7; color: #555; text-align: justify;">
+          Boost guest satisfaction and brand image with Qubit Interactive next generation hospitality TV systems delivering smart, seamless entertainment and communication that hotels love and guests remember.
+        </p>
+        
+      </div>
+    </div>
+  </div>
+</section>
+<section id="featured-hardware" class="py-5 content-section">
+    <div class="container px-5 text-center">
+        <h3 class="text-dark mb-0">Featured Hardware</h3>
+        <p class="lead-subtitle mb-5">
+            Browse highlights from our enterprise catalogue
+        </p>
+        
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            
+            <div class="col d-flex">
+                <div class="hardware-card h-100" data-aos="flip-up" data-aos-delay="100">
+                    <a href="assets/specs/Qubit Server EC252D4C 1U Compact Server Datasheet.pdf" class="text-dark d-flex flex-column h-100" target="_blank">
+                        <div class="hardware-card-img-container" style="background-color: #ffffff;">
+                            <img src="assets/img/Catalog/Qubit.png" alt="QUBIT EC252D4C Server" style="width: 288px;height: 132;"/>
+                        </div>
+                        <div class="hardware-card-body flex-grow-1">
+                            <h5>QUBIT EC252D4C Server</h5>
+                            <p>Compact, Xeon-powered rackmount server with RAID & KVM over IP.</p>
+                        </div>
+                        <span class="btn-solutions">View</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col d-flex">
+                <div class="hardware-card h-100" data-aos="flip-up" data-aos-delay="200">
+                    <a href="assets/specs/Datasheet_CMP200_EN_v1.3.2_20230510.pdf" class="text-dark d-flex flex-column h-100" target="_blank">
+                        <div class="hardware-card-img-container" style="background-color: #ffffff;">
+                            <img src="assets/img/Catalog/CMP.png" alt="Wellav CMP203 Encoder" style="width: 288px;height: 132;"/>
+                        </div>
+                        <div class="hardware-card-body flex-grow-1">
+                            <h5>Wellav CMP203 Encoder</h5>
+                            <p>Modular chassis with 6 slots, QAM/IP support & web interface.</p>
+                        </div>
+                        <span class="btn-solutions">View</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="col d-flex">
+                <div class="hardware-card h-100" data-aos="flip-up" data-aos-delay="300">
+                    <a href="assets/specs/Datasheet_OmniHub 6_EN_S_2020925 (simplify).pdf" class="text-dark d-flex flex-column h-100" target="_blank">
+                        <div class="hardware-card-img-container" style="background-color: #ffffff;">
+                            <img src="assets/img/Catalog/Omni.png" alt="OmniHub 6" style="width: 288px;height: 132;"/>
+                        </div>
+                        <div class="hardware-card-body flex-grow-1">
+                            <h5>OmniHub 6</h5>
+                            <p>Modular encoder with IP switch, hot-swappable modules, and QAM/DTMB support.</p>
+                        </div>
+                        <span class="btn-solutions">View</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="catalog.html" class="btn btn-outline-dark btn-lg">Explore Full Catalogue</a>
+        </div>
+    </div>
+</section>
+<section class="py-5 text-white d-flex align-items-center position-relative" style="background: url('assets/img/BAnner.jpg') center center/cover no-repeat; min-height: 350px;">
+    
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(2px); z-index: 1;"></div>
+    
+    <div class="container position-relative z-2 px-4">
+        <div class="row">
+            <div class="col-lg-8">
+                
+                <h2 class="display-4 fw-bold mb-3 text-shadow">
+                    Upgrade your Hospitality<br>Experience Today
+                </h2>
+                
+                <p class="lead mb-4 text-shadow" style="font-size: 1.1rem;">
+                    Together, let's transform the way you serve your guests with a bespoke solution
+                </p>
+                
+                <a href="contact.html" class="btn btn-outline-light btn-lg" style="border-radius: 8px;">
+                    Get a quotation now
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer" style="background-color: #000000;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <img src="assets/img/company-logo3.png" alt="Qubit Asia Logo" class="mb-4" height="50">
+                <p style="color: #cccccc;">Transforming hospitality experiences through innovative technology solutions.</p>
+            </div>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h5 class="text-white mb-4">Contact Info</h5>
+                <p style="color: #cccccc;"><i class="bi bi-geo-alt-fill me-2"></i>31, Jalan BK 5a/3a, Bandar Kinrara 5, 47180 Puchong, Selangor, Malaysia</p>
+                <p style="color: #cccccc;"><i class="bi bi-telephone-fill me-2"></i>03-8075 0659</p>
+                <p style="color: #cccccc;"><i class="bi bi-envelope-fill me-2"></i>hello@qubit.asia</p>
+            </div>
+            <div class="col-lg-4">
+                <h5 class="text-white mb-4">Connect With Us</h5>
+                <a href="https://www.linkedin.com/company/qubit-interactive/" target="_blank" class="social-icon">
+                    <i class="bi bi-linkedin" style="color: #ffffff;"></i>
+                </a>
+            </div>
+        </div>
+        <hr class="my-4" style="background-color: #333333;">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="mb-0" style="color: #cccccc;">© 2023 Qubit Asia. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  // Initialize AOS animation
+  document.addEventListener('DOMContentLoaded', function () {
+    // Initialize Animate On Scroll (AOS)
+    AOS.init({
+      once: true // animation will happen only once
+    });
+    
+    // SWIPER.JS INITIALIZATION for Partner Logos
+    const swiper = new Swiper(".partner-swiper", {
+        // Functional Requirements
+        loop: true,
+        spaceBetween: 20,
+        // Set loopedSlides to at least the number of slides or max slidesPerView
+        loopedSlides: 6, 
+        
+        // Autoplay Configuration
+        autoplay: {
+            delay: 3000, 
+            disableOnInteraction: false, 
+            pauseOnMouseEnter: true
+        },
+        
+        // Pagination Dots Configuration
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+
+        // Responsive Breakpoints: Changes slidesPerView based on screen size
+        breakpoints: {
+            0: { 
+                slidesPerView: 2,
+            },
+            576: { 
+                slidesPerView: 3,
+            },
+            992: {
+                slidesPerView: 5,
+            },
+        },
+    });
+    // END SWIPER.JS INITIALIZATION
+  });
+</script>
+
+</body>
+</html>

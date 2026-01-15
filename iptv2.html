@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Qubit Interactive - IPTV & Digital Signage Solutions for Hospitality" />
+  <meta name="author" content="Qubit Asia" />
+  <title>Qubit Asia</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+  <!-- Bootstrap icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link href="css/styles.css" rel="stylesheet" />
+<style>
+/* ===== BASE STYLES ===== */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa, #e4ebf5);
+  margin: 0;
+  padding: 0;
+   color: #333;
+}
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
+/* ===== NAVIGATION ===== */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.85);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+}
+
+.navbar-brand img {
+  height: 60px;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-link.active, 
+.navbar-nav .nav-link.show {
+  color: #007bff;
+}
+
+.dropdown-menu {
+  background-color: #1f1f1f;
+  border: none;
+}
+
+.dropdown-menu .dropdown-item {
+  color: white;
+  transition: background 0.2s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #343a40;
+}
+
+.dropdown-header {
+  color: #adb5bd;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.navbar-toggler {
+  border: none;
+  outline: none;
+  padding: 0.5rem 0.75rem;
+}
+
+.navbar-toggler-icon {
+  width: 2rem;
+  height: 2rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* ===== HEADER/MASTHEAD ===== */
+.masthead {
+  text-align: center;
+  padding: 6rem 0;
+}
+
+.masthead h2 {
+  font-size: 3.2rem;
+  letter-spacing: -0.5px;
+  margin-bottom: 1.5rem;
+}
+
+.masthead p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== CARDS & COMPONENTS ===== */
+.solution-card {
+  transition: transform 0.2s ease;
+}
+
+.solution-card:hover {
+  transform: translateY(-10px);
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.card-img-container {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.card-img-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* ===== SECTION BACKGROUNDS ===== */
+.bg-our-solutions {
+  background: linear-gradient(135deg, #007bff, #00aaff);
+}
+
+.bg-light {
+  background-color: #f8f9fa;
+}
+/* ===== KEEP SHADOW ONLY ON SECTION HEADING & TAGLINE ===== */
+.bg-our-solutions h3,
+.bg-our-solutions > p {
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6); /* adjust as needed */
+}
+
+/* ===== REMOVE SHADOWS INSIDE CARDS ===== */
+.solution-card,
+.solution-card * {
+  text-shadow: none !important;
+  box-shadow: none !important;
+}
+
+
+/* ===== PARTNER SECTION ===== */
+#partners {
+  background-color: #f8f9fa;
+  padding: 80px 0;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(0, 123, 255, 0.03) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(0, 170, 255, 0.03) 0%, transparent 20%);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h3 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #222; /* Improved contrast */
+  position: relative;
+  display: inline-block;
+  padding-bottom: 15px;
+  margin-bottom: 1.5rem;
+}
+
+.section-header h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #007bff, #00aaff);
+  border-radius: 2px;
+}
+
+/* Updated Partner Logos Container */
+.partner-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.partner-item {
+  width: 200px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+ 
+}
+
+.partner-item:hover {
+  transform: scale(1.15);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+ 
+}
+
+.partner-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* ===== FOOTER ===== */
+  .footer {
+            background: var(--dark);
+            color: black;
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: white;
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+
+/* ===== FLOATING CONTACT ===== */
+.floating-contact-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+}
+
+.floating-contact-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #007bff, #00aaff);
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-contact-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+.contact-popup {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  width: 350px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.contact-popup.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.contact-popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.contact-popup-header h5 {
+  margin: 0;
+  font-weight: 600;
+  color: #333;
+}
+
+.close-popup {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #777;
+  transition: color 0.2s;
+  line-height: 1;
+}
+
+.close-popup:hover {
+  color: #333;
+}
+
+
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.card-text, .small-text {
+  line-height: 1.6;
+}
+
+.bg-our-solutions .card-body {
+  padding: 1.5rem;
+}
+
+.bg-our-solutions .card-title {
+  margin-bottom: 0.75rem;
+}
+
+.bg-our-solutions .lead {
+  margin-bottom: 0.5rem;
+}
+
+.card.h-100.shadow-sm h6 {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+.card-hover .card-body {
+  padding: 1.5rem;
+}
+
+.card-hover .card-title {
+  margin: 1rem 0 0.75rem;
+}
+
+/* Content container max-width for better reading */
+.container {
+  max-width: 1200px;
+}
+
+/* ===== READABILITY IMPROVEMENTS ===== */
+/* Improved text contrast for better readability */
+.text-dark {
+  color: #222 !important;
+}
+
+.text-muted {
+  color: #555 !important; /* Darker for better contrast */
+}
+
+/* Better spacing for content sections */
+.content-section {
+  padding: 4rem 0;
+}
+
+/* Improved paragraph spacing */
+.lead {
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+/* Better card text contrast */
+.card {
+  color: #333;
+}
+
+/* Improved footer contrast */
+.footer {
+  color: #444;
+}
+
+/* Better text sizing for mobile */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px; /* Base font size for mobile */
+    line-height: 1.6;
+  }
+  
+  .card-text, .small-text {
+    font-size: 0.95rem;
+  }
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+@media (max-width: 1200px) {
+  .partner-logos {
+    gap: 35px;
+  }
+  .partner-item {
+    width: 180px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 992px) {
+  .partner-logos {
+    gap: 30px;
+  }
+  .partner-item {
+    width: 160px;
+    height: 110px;
+  }
+  .section-header h3 {
+    font-size: 2.5rem;
+  }
+  .solution-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-img-container img {
+    width: 80%;
+    height: auto;
+  }
+  
+  .masthead h2 {
+    font-size: 2.5rem;
+  }
+  
+  .masthead p {
+    font-size: 1.1rem;
+  }
+  
+  .section-header h3 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .masthead {
+    padding: 4rem 2rem;
+  }
+  .masthead h2 {
+    font-size: 2rem;
+  }
+  .masthead p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .solution-card {
+    margin-bottom: 1rem;
+  }
+  .card-img-container img {
+    width: 100%;
+    height: auto;
+  }
+  .navbar-nav .nav-link {
+    font-size: 1rem;
+  }
+  .partner-logos {
+    gap: 20px;
+  }
+  .partner-item {
+    width: 140px;
+    height: 90px;
+    padding: 12px;
+  }
+  .section-header h3 {
+    font-size: 1.8rem;
+  }
+  #partners {
+    padding: 60px 0;
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-nav .nav-link {
+    font-size: 0.95rem;
+  }
+  .navbar-brand img {
+    height: 50px;
+  }
+  .partner-logos {
+    gap: 15px;
+  }
+  .partner-item {
+    width: 120px;
+    height: 80px;
+    padding: 10px;
+  }
+  .section-header h3 {
+    font-size: 2rem;
+  }
+  #partners {
+    padding: 50px 0;
+  }
+  .floating-contact-container {
+    bottom: 20px;
+    right: 20px;
+  }
+  .floating-contact-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+  .contact-popup {
+    width: 300px;
+    right: -10px;
+  }
+  
+  /* Mobile readability improvements */
+  .masthead p {
+    font-size: 1.05rem; /* Slightly larger on mobile */
+    line-height: 1.7;
+  }
+  
+  .card-body {
+    padding: 1.5rem 1rem;
+  }
+}
+</style>
+</head>
+<body id="page-top" ng-controller="CatalogController">
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm">
+  <div class="container px-5">
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/img/company-logo3.png" alt="Qubit Asia Logo" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        
+        <!-- Solutions Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Solutions</a>
+          <ul class="dropdown-menu">
+            <li><h6 class="dropdown-header">Hospitality</h6></li>
+            <li><a class="dropdown-item" href="iptv.html">QBStar (IPTV)</a></li>
+            <li><a class="dropdown-item" href="pms.html">QBPms</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><h6 class="dropdown-header">Digital Signage</h6></li>
+            <li><a class="dropdown-item" href="signage.html">QBSign</a></li>
+          </ul>
+        </li>
+
+        <!-- Company Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Company</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+            <li><a class="dropdown-item" href="values.html">Our Values</a></li>
+            <li><a class="dropdown-item" href="features.html">Platform Features</a></li>
+          </ul>
+        </li>
+
+        <!-- Catalog + Contact -->
+        <li class="nav-item"><a class="nav-link" href="catalog.html">Catalogue</a></li>
+        <a class="nav-link" href="contact.html" target="_blank" rel="noopener noreferrer">Contact</a>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+      <header class="masthead">
+    <div class="container">
+      <h1 class="display-4 lh-1 mb-3">QBStar</h1>
+      <p>Interactive TV solution based on hospitality smart TV</p>
+    </div>
+  </header>
+
+
+    <section>
+<!-- Include a modern font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<div class="container py-5">
+  <div class="row align-items-center gx-5 gy-4">
+
+    <!-- Image Section (Left Side) -->
+    <div class="col-lg-6">
+      <div class="position-relative overflow-hidden rounded-4 shadow-sm" style="transition: transform 0.3s ease; cursor: pointer;">
+        <img src="assets/img/qbstar-ai.png" alt="QBStar AI" class="img-fluid w-100 rounded-4" style="object-fit: cover; height: 100%; max-height: 500px;">
+      </div>
+    </div>
+
+    <!-- Text Section (Right Side) -->
+    <div class="col-lg-6 d-flex flex-column justify-content-center">
+      <h1 class="display-6 fw-semibold mb-3" style="font-family: 'Poppins', sans-serif;">
+        Seamless Guest Communication <br class="d-none d-md-block">
+        with <span class="text-primary">QBStar IPTV</span>
+      </h1>
+      <p class="fs-5 mb-4" style="font-family: 'Poppins', sans-serif; color: black;">
+        QBStar delivers interactive IPTV solutions, 
+        designed to improve direct communication with in-room guests. Our solution serves as both an 
+        informative and entertainment hub, allowing guests to access real-time information  
+        and announcements while enjoying live television.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+        
+     <br><br><br>
+  
+      <div class="container px-5">
+        <h3 class="text-center lh-1 mb-4">QBStar Key Features</h3>
+          <div style="background-color: #f1f1f1;">
+          <div class="row gx-5 justify-content-center">
+            <div class="col-md-3 mb-4">
+              <div class="text-center">
+                <i class="bi-alarm icon-feature text-gradient"></i>
+                <h5 class="font-alt">Wake-up Alarm</h5>
+                <p class="text-muted">Housekeeping status update on TV</p>
+              </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="text-center">
+                <i class="bi-qr-code icon-feature text-gradient"></i>
+                <h5 class="font-alt">QR Code</h5>
+                <p class="text-muted">Embedded Hotel Compendium in QR</p>
+              </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="text-center">
+                <i class="bi-wifi icon-feature text-gradient"></i>
+                <h5 class="font-alt">WIFI Information</h5>
+                <p class="text-muted">WIFI access information on TV </p>
+              </div>
+            </div>
+          </div>
+    
+          <div class="row gx-5 justify-content-center">
+            <div class="col-md-3 mb-4">
+              <div class="text-center">
+                <i class="bi-geo-alt icon-feature text-gradient"></i>
+                <h5 class="font-alt">Place of Interest</h5>
+                <p class="text-muted">Places of Interest</p>
+              </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="text-center">
+                <i class="bi-sun icon-feature text-gradient"></i>
+                <h5 class="font-alt">Weather</h5>
+                <p class="text-muted">Local weather forecast information on TV</p>
+              </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="text-center">
+              <i class="bi-globe-central-south-asia icon-feature text-gradient"></i>
+              <h5 class="font-alt">World Clock</h5>
+              <p class="text-muted">World Clock display for international travelers</p>
+              </div>
+            </div>
+          </div>
+      
+          <div class="row gx-5 justify-content-center">
+            <div class="col-md-3 mb-4">
+              <div class="text-center">
+                <i class="bi-megaphone icon-feature text-gradient"></i>
+                <h5 class="font-alt">Hotel Promotion</h5>
+                <p class="text-muted">Promotional information can be pushed to TV in banner or full screen mode</p>
+              </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="text-center">
+                <i class="bi-cup-hot icon-feature text-gradient"></i>
+                        <h5 class="font-alt">In-Room Dining</h5>
+                        <p class="text-muted mb-0">In room dining information</p>
+              </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="text-center">
+                <i class="bi-journal icon-feature text-gradient"></i>
+                <h5 class="font-alt">Hotel Compendium</h5>
+                <p class="text-muted">Hotel A to Z directory guide on TV</p>
+              </div>
+            </div>
+          </div>
+      
+    
+          <div class="row gx-5 justify-content-center">
+            <div class="col-md-3 mb-4">
+              <div class="text-center">
+                <i class="bi-house icon-feature text-gradient"></i>
+                <h5 class="font-alt">Hotel Information</h5>
+                <p class="text-muted">Hotel information page on TV</p>
+              </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="text-center">
+                <i class="bi-display icon-feature text-gradient"></i>
+                    <h5 class="font-alt">TV Portal Landing Page</h5>
+                    <p class="text-muted">Customized TV Portal Landing page for branding and hotel information</p>
+              </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="text-center">
+                <i class="bi-tv-fill icon-feature text-gradient"></i>
+                <h5 class="font-alt">TV Guide</h5>
+                <p class="text-muted">TV channel information with category <br> eliminating printed handout at the room</p>
+              </div>
+            </div>
+          </div>
+        
+      </div> 
+      </div>
+    
+  
+    <br><br><br>
+     <div class="container px-5">
+    <h2 class="text-center">QBStar Solutions</h2>
+    <p class="text-center" style="font-size: 25px;">QBStar offers customized interactive solutions for enjoyable hospitality and services.</p>
+
+    <div class="row">
+        <div class="col-md-6 col-12 gallery">
+            <a target="_blank" href="assets/img/kloe-gui.png" class="gallery-item">
+                <img src="assets/img/kloe-gui.png" class="img-fluid" alt="Sample 1">
+                <div class="desc">Sample 1</div>
+            </a>
+        </div>
+
+        <div class="col-md-6 col-12 gallery">
+            <a target="_blank" href="assets/iptv/smith.png" class="gallery-item">
+                <img src="assets/iptv/smith.png" class="img-fluid" alt="Sample 2">
+                <div class="desc">Sample 2</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 col-12 gallery">
+            <a target="_blank" href="assets/img/pantai.png" class="gallery-item">
+                <img src="assets/img/pantai.png" class="img-fluid" alt="Sample 3">
+                <div class="desc">Sample 3</div>
+            </a>
+        </div>
+
+        <div class="col-md-6 col-12 gallery">
+            <a target="_blank" href="assets/img/waterfront-gui.png" class="gallery-item">
+                <img src="assets/img/waterfront-gui.png" class="img-fluid" alt="Sample 4">
+                <div class="desc">Sample 4</div>
+            </a>
+        </div>
+    </div>
+
+        <div class="row">
+        <div class="col-md-6 col-12 gallery">
+            <a target="_blank" href="assets/iptv/plc3.png" class="gallery-item">
+                <img src="assets/iptv/plc3.png" class="img-fluid" alt="Sample 3">
+                <div class="desc">Sample 5</div>
+            </a>
+        </div>
+
+        <div class="col-md-6 col-12 gallery">
+            <a target="_blank" href="assets/iptv/Bangi.png" class="gallery-item">
+                <img src="assets/iptv/Bangi.png" class="img-fluid" alt="Sample 4">
+                <div class="desc">Sample 6</div>
+            </a>
+        </div>
+
+
+    <div class="row">
+        <div class="col-md-6 col-12 gallery">
+            <a target="_blank" href="assets/iptv/intercon.png" class="gallery-item">
+                <img src="assets/iptv/intercon.png" class="img-fluid" alt="Sample 3">
+                <div class="desc">Sample 7</div>
+            </a>
+        </div>
+
+        <div class="col-md-6 col-12 gallery">
+            <a target="_blank" href="assets/iptv/samsama.png" class="gallery-item">
+                <img src="assets/iptv/samsama.png" class="img-fluid" alt="Sample 4">
+                <div class="desc">Sample 8</div>
+            </a>
+        </div>
+    </div>
+     <div class="row">
+        <div class="col-md-6 col-12 gallery">
+            <a target="_blank" href="assets/iptv/seafest.png" class="gallery-item">
+                <img src="assets/iptv/seafest.png" class="img-fluid" alt="Sample 3">
+                <div class="desc">Sample 9</div>
+            </a>
+        </div>
+</div>
+</div>
+
+<!-- Partner Section (Updated with consistent container sizes) -->
+<section id="partners" class="py-6 bg-light">
+  <div class="container">
+    <h3 class="section-header mb-5 text-center">QBStar References</h3>
+    <p class="text-center mb-5"style="font-size: 25px;">Trusted by</p>
+    <div class="partner-logos text-center" data-aos="fade-up" data-aos-delay="200">
+      <div class="partner-item">
+        <img src="assets/img/main/accor-logo.png" alt="Accor Logo" />
+      </div>
+      <div class="partner-item">
+        <img src="assets/img/main/hilton.png" alt="Hilton Logo" />
+      </div>
+      <div class="partner-item">
+        <img src="assets/img/main/wyndham.png" alt="Wyndham Logo" />
+      </div>
+      <div class="partner-item">
+        <img src="assets/img/main/marriot.png" alt="Marriott Logo" />
+      </div>
+      <div class="partner-item">
+        <img src="assets/img/main/petronas.png" alt="Petronas Logo" />
+      </div>
+      <div class="partner-item">
+        <img src="assets/img/main/samsama.png" alt="Samasam Logo" />
+      </div>
+      <div class="partner-item">
+        <img src="assets/img/main/pantaihospital.png" alt="Pantai Logo" />
+      </div>
+      <div class="partner-item">
+        <img src="assets/img/main/ickl.png" alt="Pantai Logo" />
+      </div>
+    </div>
+  </div>
+</section>
+
+ <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <img src="assets/img/company-logo3.png" alt="Qubit Asia Logo" class="mb-4" height="50">
+                    <p>Transforming hospitality experiences through innovative technology solutions.</p>
+                </div>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="text-white mb-4">Contact Info</h5>
+                    <p><i class="bi bi-geo-alt-fill me-2"></i>31, Jalan BK 5a/3a, Bandar Kinrara 5, 47180 Puchong, Selangor, Malaysia</p>
+                    <p><i class="bi bi-telephone-fill me-2"></i>03-8075 0659</p>
+                    <p><i class="bi bi-envelope-fill me-2"></i>hello@qubit.asia</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="text-white mb-4">Connect With Us</h5>
+                    <a href="https://www.linkedin.com/company/qubit-interactive/" target="_blank" class="social-icon">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">© 2023 Qubit Asia. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+  // Initialize AOS animation
+  document.addEventListener('DOMContentLoaded', function () {
+    AOS.init({
+      once: true // animation will happen only once
+    });
+  });
+</script>
+
+</body>
+</html>

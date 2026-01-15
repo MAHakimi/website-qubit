@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="About Qubit Asia - Leading provider of hospitality TV solutions since 2014"
+    />
+    <meta name="author" content="Qubit Asia" />
+    <title>About Us | Qubit Asia</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Bootstrap CSS (Use only one version) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link href="css/styles.css" rel="stylesheet" />
+
+    <style>
+      :root {
+        --primary-color: #007bff;
+        --text-dark: #333;
+        --text-muted: #6c757d;
+        --bg-light: #f8f9fa;
+        --transition: all 0.3s ease;
+      }
+
+      html,
+      body {
+        overflow-x: hidden; /* Disables horizontal scrolling */
+        width: 100%; /* Ensure content fits within viewport */
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(135deg, #f5f7fa, #e4ebf5);
+        margin: 0;
+        padding: 0;
+        color: #333;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .skip-nav {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: var(--primary-color);
+        color: white;
+        padding: 8px;
+        z-index: 10000;
+        transition: top 0.3s;
+      }
+
+      .skip-nav:focus {
+        top: 0;
+      }
+
+      /* ===== NAVIGATION ===== */
+      .navbar {
+        background-color: rgba(0, 0, 0, 0.85);
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        top: 0;
+      }
+
+      .navbar-brand img {
+        height: 60px;
+      }
+
+      .navbar-nav .nav-link {
+        font-size: 1.1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+
+      .navbar-nav .nav-link:hover,
+      .navbar-nav .nav-item.active .nav-link,
+      .navbar-nav .nav-link.active,
+      .navbar-nav .nav-link.show {
+        color: #007bff;
+      }
+
+      .dropdown-menu {
+        background-color: #1f1f1f;
+        border: none;
+      }
+
+      .dropdown-menu .dropdown-item {
+        color: white;
+        transition: background 0.2s ease;
+      }
+
+      .dropdown-menu .dropdown-item:hover {
+        background-color: #343a40;
+      }
+
+      .dropdown-header {
+        color: #adb5bd;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+      }
+
+      .navbar-toggler {
+        border: none;
+        outline: none;
+        padding: 0.5rem 0.75rem;
+      }
+
+      .navbar-toggler-icon {
+        width: 2rem;
+        height: 2rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+      }
+
+      header.masthead {
+        background: url("assets/img/main/about.jpg") no-repeat center center;
+        background-size: cover;
+        height: 80vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      header.masthead::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        backdrop-filter: blur(6px);
+        background-color: rgba(0, 0, 0, 0.55);
+        z-index: 1;
+      }
+
+      header.masthead .container {
+        position: relative;
+        z-index: 2;
+        color: white;
+      }
+
+      header h2 {
+        font-size: clamp(2rem, 5vw, 3rem);
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      header p {
+        font-size: x-large;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .section-header h2 {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        font-weight: 600;
+      }
+
+      .section-header p {
+        font-size: larger;
+        color: var(--text-muted);
+      }
+
+      .about-card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        margin-bottom: 2rem;
+        transition: transform 0.3s ease-in-out;
+        height: 100%;
+      }
+
+      .about-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .logo-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .brand-logo {
+        max-width: 120px;
+        height: auto;
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: var(--transition);
+      }
+
+      .brand-logo:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      #hotel-logos {
+        background-color: var(--bg-light);
+        padding: 60px 0;
+      }
+
+      .hotel-logos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 30px;
+      }
+
+      .hotel-logos img {
+        height: 100px;
+        width: auto;
+        transition: transform 0.3s ease;
+      }
+
+      .hotel-logos img:hover {
+        transform: scale(1.05);
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        border: none;
+        padding: 10px 30px;
+        font-size: 1.1rem;
+        border-radius: 25px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        transition: var(--transition);
+      }
+
+      .btn-primary:hover {
+        transform: scale(1.05);
+      }
+
+      /* ===== FOOTER ===== */
+      .footer {
+        background-color: #000000;
+        color: #cccccc;
+        padding: 4rem 0 2rem;
+        font-family: "Poppins", sans-serif;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-top: auto; /* Push footer to bottom */
+      }
+
+      .footer p {
+        color: #cccccc;
+      }
+
+      .footer hr {
+        background-color: #333333;
+      }
+
+      .footer i {
+        vertical-align: middle;
+      }
+
+      .footer a {
+        color: #cbd5e1;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .footer a:hover {
+        color: #ffffff;
+      }
+
+      .social-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        margin-right: 0.5rem;
+        transition: all 0.3s ease;
+      }
+
+      .social-icon:hover {
+        background: #007bff;
+        transform: translateY(-3px);
+      }
+
+      @media (max-width: 768px) {
+        .brand-logo {
+          max-width: 100px;
+        }
+
+        .hotel-logos img {
+          height: 80px;
+        }
+
+        .hotel-logos {
+          gap: 20px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .brand-logo {
+          max-width: 80px;
+        }
+
+        .hotel-logos img {
+          height: 60px;
+        }
+
+        .about-card {
+          padding: 1.5rem;
+        }
+      }
+
+      /* Updated Partner Logos Container */
+      .partner-logos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        margin: 30px 0;
+      }
+
+      .partner-item {
+        width: 200px;
+        height: 130px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+        border-radius: 12px;
+        background: white;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s ease;
+      }
+
+      .partner-item:hover {
+        transform: scale(1.15);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+      }
+
+      .partner-item img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+
+      .certified-container {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+      }
+
+      .certified-img {
+        width: 588px;
+      }
+
+      /* Fix for the trusted by text alignment */
+      .trusted-text {
+        margin-bottom: 2rem;
+        font-weight: 600;
+        font-size: 1.25rem;
+      }
+      /*
+   =================================================
+   | Partner Logo Section: Auto-Sliding Marquee |
+   =================================================
+*/
+
+/* 1. Animation Keyframes: Moves content from right to left */
+@keyframes autoSlide {
+    /* Translate the entire row by 50% of its width (the length of one set of logos) */
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } 
+}
+
+
+/* 2. Wrapper: Hides overflow and defines scroll area */
+.logo-scroll-wrapper {
+    /* Critical: Hides the duplicated logos that are waiting to slide in */
+    overflow: hidden; 
+    padding-bottom: 20px; 
+    
+    /* Disable all manual scroll properties */
+    scroll-snap-type: none; 
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    
+    /* === CRITICAL FOR THE FADE EFFECT === */
+    /* Use a linear gradient mask to fade the content at the left and right edges. */
+    mask-image: linear-gradient(
+        to right, 
+        transparent 0%, /* Start fully transparent (fade out) */
+        black 5%,      /* Become fully opaque at 5% of width */
+        black 95%,     /* Stay fully opaque until 95% of width */
+        transparent 100% /* End fully transparent (fade out) */
+    );
+}
+
+.logo-scroll-wrapper::-webkit-scrollbar {
+    display: none; 
+}
+
+
+/* 3. Inner Row: Animation target and enforces single line */
+.partner-logos-scroll-row {
+    display: flex;
+    flex-wrap: nowrap; 
+    justify-content: flex-start; 
+    align-items: center;
+    gap: 30px; 
+    margin-top: 20px;
+    padding: 10px 0;
+    
+    /* CRITICAL: Must be wider than the wrapper to allow scrolling */
+    width: max-content; 
+    
+    /* CRITICAL: Apply the animation */
+    animation: autoSlide 40s linear infinite; /* 40s duration, continuous, no acceleration */
+}
+
+/* Pause animation on hover for better user experience */
+.partner-logos-scroll-row:hover {
+    animation-play-state: paused;
+}
+
+
+/* 4. Individual Logo Item: Consistent size and clean card styling */
+.partner-item-box {
+    /* --- FIXED DIMENSIONS FOR UNIFORMITY --- */
+    width: 200px; 
+    min-width: 200px; 
+    height: 120px; 
+    flex-shrink: 0; 
+    scroll-snap-align: none; 
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background: #ffffff; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); 
+    transition: all 0.3s ease;
+}
+
+.partner-item-box:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+    transform: none; 
+}
+
+.partner-item-box img {
+    max-width: 80%; 
+    max-height: 80%;
+    object-fit: contain;
+    filter: none; 
+    opacity: 1;
+    transition: all 0.3s;
+}
+    </style>
+  </head>
+
+  <body id="page-top">
+    <!-- Skip navigation for accessibility -->
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm">
+      <div class="container px-3 px-md-5">
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/img/company-logo3.png" alt="Qubit Asia Logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+
+            <!-- Solutions Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="solutionsDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Solutions
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="solutionsDropdown">
+                <li><h6 class="dropdown-header">Hospitality</h6></li>
+                <li>
+                  <a class="dropdown-item" href="iptv.html">QBStar (IPTV)</a>
+                </li>
+                <li><a class="dropdown-item" href="pms.html">QBPms</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><h6 class="dropdown-header">Digital Signage</h6></li>
+                <li><a class="dropdown-item" href="signage.html">QBSign</a></li>
+              </ul>
+            </li>
+
+            <!-- Company Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="companyDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Company
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="companyDropdown">
+                <li><a class="dropdown-item" href="about.html">About Us</a></li>
+                <li>
+                  <a class="dropdown-item" href="values.html">Our Values</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="features.html"
+                    >Platform Features</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Catalog + Contact -->
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarCatalogueDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Catalogue
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarCatalogueDropdown">
+                <li><a class="dropdown-item" href="catalog.html">Hardware Catalogue</a></li>
+                <li><a class="dropdown-item" href="softwarecatalog.html">Software Catalogue</a></li>
+            </ul>
+        </li>
+            <a
+              class="nav-link"
+              href="contact.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Contact</a
+            >
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead">
+      <div class="container">
+        <h1 class="display-4 lh-1 mb-3">About Us</h1>
+        <p>
+          Explore our curated selection of enterprise hardware and digital
+          solutions, including servers, encoders, IPTV systems, and signage
+          technology.
+        </p>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container py-5">
+  <div class="row align-items-center gx-5 gy-4">
+
+    <div class="col-lg-6">
+      <div class="position-relative overflow-hidden rounded-4 shadow-sm" style="transition: transform 0.3s ease; cursor: pointer;">
+        <img src="assets/img/kloemockup (1).png" alt="QBStar AI" class="img-fluid w-100 rounded-4" style="object-fit: cover; height: 100%; max-height: 500px;">
+      </div>
+    </div>
+
+    <div class="col-lg-6 d-flex flex-column justify-content-center">
+      <h1 class="display-6 fw-semibold mb-3" style="font-family: 'Poppins', sans-serif;">
+        The Korean
+         <span style="color: orange;" >Hospitality TV</span> Solution <br class="d-none d-md-block">
+      </h1>
+      <p class="fs-5 mb-4" style="font-family: 'Poppins', sans-serif; color: black; text-align: justify;">
+        Incorporated in Malaysia in 2014, we specialize in 
+        hospitality TV solutions that enhance guest experiences 
+        and streamline hotel media operations.<br><br>
+
+        Our cross-national R&D teams in Malaysia and South 
+        Korea collaborate closely with LG HQ and Samsung HQ to 
+        deliver future-ready technology built on full API access.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<div class="py-5 text-white d-flex align-items-center justify-content-center position-relative" 
+     style="background: url('assets/img/backgrounmockup.png') center center/cover no-repeat; min-height: 500px; overflow: hidden; flex-direction: column;">
+    
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; backdrop-filter: blur(5px); background-color: rgba(0, 0, 0, 0.3); z-index: 1;"></div>
+
+    <div style="position: relative; z-index: 2; width: 100%;"> 
+        
+        <div style="text-align: center; margin-bottom: 40px; padding: 0 15px;">
+            <h2 style="font-size: 36px; margin-bottom: 10px;">Our Strengths</h2>
+            <p style="font-size: 18px; color: #ccc;">We offer customised smart solutions for Hospitality TV & Digital Signage</p>
+        </div>
+        
+        <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; padding: 0 15px;">
+            
+            <div style="background-color: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); text-align: center; width: 300px;">
+                <i class="fas fa-users" style="font-size: 40px; color: #9b59b6; margin-bottom: 20px;"></i>
+                <h3 style="color: #333; font-size: 22px; margin-bottom: 10px;">Experience</h3>
+                <p style="color: #666; font-size: 15px;">Preferred B2B partner for <b>LG</b>, <b>Samsung</b> and <b>Hisense</b></p>
+            </div>
+            
+            <div style="background-color: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); text-align: center; width: 300px;">
+                <i class="fas fa-user-tie" style="font-size: 40px; color: #82b74b; margin-bottom: 20px;"></i>
+                <h3 style="color: #333; font-size: 22px; margin-bottom: 10px;">Expertise</h3>
+                <p style="color: #666; font-size: 15px;">Regional leader in enterprise hospitality solutions</p>
+            </div>
+            
+            <div style="background-color: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); text-align: center; width: 300px;">
+                <i class="fas fa-handshake" style="font-size: 40px; color: #e67e22; margin-bottom: 20px;"></i>
+                <h3 style="color: #333; font-size: 22px; margin-bottom: 10px;">Excellence</h3>
+                <p style="color: #666; font-size: 15px;">Trusted partner of major international hotels</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <section id="partners" class="py-4 bg-light"> </section>
+    <div class="container">
+        <h3 class="section-header mb-4 text-center">Trusted Partner of</h3> 
+        
+        <div class="logo-scroll-wrapper">
+            <div class="partner-logos-scroll-row" data-aos="fade-up" data-aos-delay="200">
+                
+                <div class="partner-item-box"><img src="assets/img/main/accor-logo.png" alt="Accor Logo" /></div>
+                <div class="partner-item-box"><img src="assets/img/main/hilton.png" alt="Hilton Logo" /></div>
+                <div class="partner-item-box"><img src="assets/img/main/wyndham.png" alt="Wyndham Logo" /></div>
+                <div class="partner-item-box"><img src="assets/img/main/marriot.png" alt="Marriott Logo" /></div>
+                <div class="partner-item-box"><img src="assets/img/main/petronas.png" alt="Petronas Logo" /></div>
+                <div class="partner-item-box"><img src="assets/img/main/samsama.png" alt="Samasam Logo" /></div>
+                <div class="partner-item-box"><img src="assets/img/main/pantaihospital.png" alt="Pantai Logo" /></div>
+                <div class="partner-item-box"><img src="assets/img/main/ickl.png" alt="Pantai Logo" /></div>
+                
+                <div class="partner-item-box"><img src="assets/img/main/accor-logo.png" alt="Accor Logo" /></div>
+                <div class="partner-item-box"><img src="assets/img/main/hilton.png" alt="Hilton Logo" /></div>
+                <div class="partner-item-box"><img src="assets/img/main/wyndham.png" alt="Wyndham Logo" /></div>
+                <div class="partner-item-box"><img src="assets/img/main/marriot.png" alt="Marriott Logo" /></div>
+                <div class="partner-item-box"><img src="assets/img/main/petronas.png" alt="Petronas Logo" /></div>
+                <div class="partner-item-box"><img src="assets/img/main/samsama.png" alt="Samasam Logo" /></div>
+                <div class="partner-item-box"><img src="assets/img/main/pantaihospital.png" alt="Pantai Logo" /></div>
+                <div class="partner-item-box"><img src="assets/img/main/ickl.png" alt="Pantai Logo" /></div>
+                </div>
+        </div>
+        <section class="py-4"></section>
+        </div>
+          <p class="text-center trusted-text ">Certifications</p>
+          <div class="certified-container">
+            <img
+              class="certified-img"
+              src="assets/img/certificates/certificate-lg.jpg"
+              alt="LG Certification"
+            />
+            <img
+              class="certified-img"
+              src="assets/img/certificates/certificate-samsung.jpg"
+              alt="Samsung Certification"
+            />
+          </div>
+        </div>  
+        <section class="py-4"></section>
+    </div>
+</section>
+    </main>
+<section class="py-5 text-white d-flex align-items-center position-relative" style="background: url('assets/img/BAnner.jpg') center center/cover no-repeat; min-height: 350px;">
+    
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(2px); z-index: 1;"></div>
+    
+    <div class="container position-relative z-2 px-4">
+        <div class="row">
+            <div class="col-lg-8">
+                
+                <h2 class="display-4 fw-bold mb-3 text-shadow">
+                    Upgrade your Hospitality<br>Experience Today
+                </h2>
+                
+                <p class="lead mb-4 text-shadow" style="font-size: 1.1rem;">
+                    Together, let's transform the way you serve your guests with a bespoke solution
+                </p>
+                
+                <a href="contact.html" class="btn btn-outline-light btn-lg" style="border-radius: 8px;">
+                    Get a quotation now
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer" style="background-color: #000000;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <img src="assets/img/company-logo3.png" alt="Qubit Asia Logo" class="mb-4" height="50">
+                <p style="color: #cccccc;">Transforming hospitality experiences through innovative technology solutions.</p>
+            </div>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h5 class="text-white mb-4">Contact Info</h5>
+                <p style="color: #cccccc;"><i class="bi bi-geo-alt-fill me-2"></i>31, Jalan BK 5a/3a, Bandar Kinrara 5, 47180 Puchong, Selangor, Malaysia</p>
+                <p style="color: #cccccc;"><i class="bi bi-telephone-fill me-2"></i>03-8075 0659</p>
+                <p style="color: #cccccc;"><i class="bi bi-envelope-fill me-2"></i>hello@qubit.asia</p>
+            </div>
+            <div class="col-lg-4">
+                <h5 class="text-white mb-4">Connect With Us</h5>
+                <a href="https://www.linkedin.com/company/qubit-interactive/" target="_blank" class="social-icon">
+                    <i class="bi bi-linkedin" style="color: #ffffff;"></i>
+                </a>
+            </div>
+        </div>
+        <hr class="my-4" style="background-color: #333333;">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="mb-0" style="color: #cccccc;">© 2023 Qubit Asia. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- Scripts - Use only one version of Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // Initialize AOS
+      document.addEventListener("DOMContentLoaded", function () {
+        AOS.init({
+          once: true,
+          duration: 800,
+          offset: 100,
+        });
+      });
+    </script>
+  </body>
+</html>

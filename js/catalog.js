@@ -1,0 +1,102 @@
+// Initialize the AngularJS application module
+angular.module('catalogApp', [])
+
+// Define the CatalogController
+.controller('CatalogController', function($scope) {
+
+    // --- 1. Product Data Definition (JSON Integration) ---
+    // This array holds all your catalogue items based on the provided JSON.
+    $scope.allCatalogItems = [
+        {
+            title: "Dell PowerEdge R240 Server",
+            image: "assets/img/Catalog/R240.png",
+            description: "An affordable, compact server solution designed for small business and service providers.",
+            category: "Server",
+            features: [
+            "100% more cores with Intel Xeon E-2200 processors",
+            "Up to 4 x 3.5” SATA/SAS/SSD drive bays",
+            "iDRAC9 with Lifecycle Controller",
+            "Multi-vector cooling for energy efficiency"
+            ],
+            pdf: "assets/specs/SmartSRV-poweredge-r240-spec-sheet.pdf"
+        },
+        {
+            title: "EC252D4C QUBIT Rack-Mount Server",
+            image: "assets/img/Catalog/Qubit.png",
+            description: "A compact rack-mount server designed for enterprise workloads, featuring Intel® Xeon® E-2300 support and hardware RAID.",
+            category: "Server",
+            features: [
+            "Supports 1 x Intel® Xeon® E-2300 Series Processor",
+            "Up to 2x Fixed 3.5” Disks",
+            "Compact chassis for space-saving deployments",
+            "On-board Intel® Rapid Storage RAID 0/1/5/10",
+            "KVM over IP supported for remote access"
+            ],
+            pdf: "assets/specs/Qubit Server EC252D4C 1U Compact Server Datasheet.pdf"
+        },
+        {
+            title: "Wellav CMP201/203 Modular Encoder",
+            image: "assets/img/Catalog/CMP.png",
+            description: "Next-generation modular video processing platform for multi-channel encoding, signal reception, IPTV, and QAM/OFDM distribution — ideal for hospitality, education, and government.",
+            category: "Encoder",
+            features: [
+            "1RU 19\" rack-mount chassis with up to 6 hot-swappable modules",
+            "Optional dual power supplies (CMP201D model)",
+            "Supports 120 IP inputs & 120 IP outputs (SPTS/MPTS)",
+            "Up to 24 HD (HDMI®) or 48 SD (CVBS) encoding channels",
+            "Multiple tuner inputs (DVB-C, DVB-T/T2, DVB-S/S2/S2X, ISDB-T, 8VSB)",
+            "Front panel 8-channel QAM/OFDM/ISDB-T modulation (CMP203)",
+            "4 GbE ports: 2 management, 2 for stream I/O",
+            "Simple web-based configuration and firmware upgrade interface"
+            ],
+            pdf: "assets/specs/Datasheet_CMP200_EN_v1.3.2_20230510.pdf"
+        },
+        {
+            title: "Sencore OmniHub 6 Modular Encoder",
+            image: "assets/img/Catalog/Omni.png",
+            description: "A next-generation modular video processing platform offering scalable encoding, IP streaming, and QAM/DTMB modulation — ideal for hospitality, government, and multi-dwelling applications.",
+            category: "Encoder",
+            features: [
+            "19” 1RU standard rack unit",
+            "Optional dual power supplies (OmniHub 6D)",
+            "Optional 8-CH QAM/DTMB/OFDM modulation module (OmniHub 6RFX)",
+            "4 GbE Ethernet ports (2 for management, 2 for IP I/O)",
+            "Supports 120 IP inputs and 120 IP outputs (SPTS/MPTS)",
+            "6 rear slots for hot-swappable functional modules",
+            "Up to 24 HDMI® HD or 48 CVBS SD encoding channels",
+            "Supports QAM-B, DVB-S/S2/S2X, and 8VSB coax input frequencies",
+            "User-friendly web-based interface for setup and upgrades",
+            "Simple installation and configuration"
+            ],
+            pdf: "assets/specs/Datasheet_OmniHub 6_EN_S_2020925 (simplify).pdf"
+        }
+    ];
+
+    // --- 2. Pagination and Filtering Logic Configuration ---
+
+    // The initial number of items to show
+    var initialLoadCount = 4; // Set to 4 to show all current items initially
+    // The number of items to add when "Load More" is clicked
+    var loadIncrement = 3; 
+    
+    // The data source for the ng-repeat.
+    $scope.catalogItems = $scope.allCatalogItems;
+    $scope.filterCategory = ''; // Empty string means 'All'
+    $scope.visibleLimit = initialLoadCount; 
+
+    /**
+     * Increases the visible limit to display more products.
+     */
+    $scope.loadMore = function() {
+        $scope.visibleLimit += loadIncrement;
+    };
+    
+    /**
+     * Resets the pagination limit whenever the filter category changes.
+     */
+    $scope.$watch('filterCategory', function(newVal, oldVal) {
+        if (newVal !== oldVal) {
+            $scope.visibleLimit = initialLoadCount;
+        }
+    });
+});

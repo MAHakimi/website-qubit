@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Qubit Asia" />
+  <meta name="author" content="Qubit Asia" />
+  <title>QBStar | Qubit Asia</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet" />
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  
+  <link href="css/styles.css" rel="stylesheet" />
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+
+
+
+  <style>
+  /* Prevent horizontal scroll */
+html, body {
+  overflow-x: hidden; 
+  width: 100%;
+}
+/* === General Styles === */
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa, #e4ebf5);
+  margin: 0;
+  padding: 0;
+   color: #333;
+}
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
+/* ===== NAVIGATION ===== */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.85);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+}
+
+.navbar-brand img {
+  height: 60px;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-link.active, 
+.navbar-nav .nav-link.show {
+  color: #007bff;
+}
+
+.dropdown-menu {
+  background-color: #1f1f1f;
+  border: none;
+}
+
+.dropdown-menu .dropdown-item {
+  color: white;
+  transition: background 0.2s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #343a40;
+}
+
+.dropdown-header {
+  color: #adb5bd;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.navbar-toggler {
+  border: none;
+  outline: none;
+  padding: 0.5rem 0.75rem;
+}
+
+.navbar-toggler-icon {
+  width: 2rem;
+  height: 2rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+header.masthead {
+  background: url('assets/img/Holding remote.png') no-repeat center center;
+  background-size: cover;
+  height: 80vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+header.masthead::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+header.masthead .container {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+header h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+header p {
+  font-size: 25px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.section-header p {
+  font-size: 1.2rem;
+  color: #6c757d;
+}
+
+.btn-primary {
+  background-color: #ff9100;
+  border: none;
+  padding: 10px 30px;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.btn-secondary{
+  background-color: #ff9100;
+  border: none;
+  padding: 10px 30px;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+.btn-primary:hover {
+  transform: scale(1.05);
+}
+.btn-secondary:hover {
+  transform: scale(1.05);
+  background-color: #ff7300;
+}
+
+/* === Gallery Section (Old Styles - REMOVE OR UPDATE) === */
+/* NOTE: I will add the new, proper gallery styles below */
+
+
+.gallery {
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.gallery a {
+    display: block;
+    position: relative;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.gallery .desc {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 8px 12px;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: opacity 0.3s ease;
+}
+
+.gallery:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.gallery:hover img {
+    transform: scale(1.05);
+}
+
+.gallery:hover .desc {
+    opacity: 0.9;
+}
+
+.gallery-item {
+    display: block;
+    width: 100%;
+}
+
+.row {
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2 rem;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        margin-bottom: 15px;
+    }
+
+    .gallery .desc {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+}
+
+/* New/Updated Gallery Styles for Lightbox Effect */
+
+/* The main wrapper for each image/link */
+.solution-gallery-item {
+    text-decoration: none; /* Remove underline from link */
+    overflow: hidden; /* Important for containing the image and desc effects */
+    display: block;
+    cursor: pointer;
+    border-radius: 8px; /* Match Bootstrap rounded styles */
+}
+
+/* Make the image scale up on hover */
+.solution-gallery-item img {
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Overlay effect and description styling */
+.solution-gallery-item .gallery-desc {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 15px;
+    background: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    transform: translateY(100%); /* Start off-screen at the bottom */
+    transition: transform 0.3s ease-in-out;
+    opacity: 1; /* Keep opacity 1 so it slides up clearly */
+    border-radius: 0 0 8px 8px; /* Match corner rounding */
+}
+
+/* Hover effects */
+.solution-gallery-item:hover img {
+    transform: scale(1.05); /* Slightly zoom in the image */
+    opacity: 0.9;
+}
+
+.solution-gallery-item:hover .gallery-desc {
+    transform: translateY(0); /* Slide the description up */
+}
+/* END New Gallery Styles */
+
+/* Values Section */
+.value-card {
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.value-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.value-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  background-color: #f3f4f6;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.value-icon i {
+  color: #df8c2e;
+}
+
+.value-card:hover .value-icon {
+  background-color: #e0e7ff;
+}
+
+.value-card h4 {
+  font-size: 1.3rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.value-card p {
+  font-size: 1rem;
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+/* === Logo Marquee Section === */
+.participating-section {
+  padding: 40px 0;
+}
+
+.logo-marquee {
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.logo-track {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  animation: marquee 30s linear infinite;
+}
+
+.logo-card {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+
+.logo-card img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Mobile View - Adjust layout and logos */
+@media (max-width: 768px) {
+  .logo-track {
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: none; /* Disable animation on smaller screens */
+  }
+
+  .logo-card {
+    width: 40%;
+    margin: 10px 0;
+  }
+
+  .gallery {
+    margin: 20px 0;
+  }
+
+  .value-card {
+    padding: 2rem;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 0.95rem;
+  }
+
+  .navbar-brand img {
+    height: 50px;
+  }
+}
+
+/* Desktop View - Ensure logos are spread out */
+@media (min-width: 769px) {
+  .logo-card {
+    width: 10%;
+  }
+
+  .value-card {
+    width: 30%;
+    margin: 20px;
+  }
+}
+
+/* Responsive Images */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Media Queries for Gallery Images */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .gallery a img {
+    max-width: 100%;
+  }
+
+  .gallery {
+    margin-bottom: 20px;
+  }
+}
+
+/* Custom Section Styles for Participating Logos */
+.hotel-logo-link {
+  display: block;
+  text-align: center;
+}
+
+.hotel-logo-link img {
+  width: 100px;
+  height: auto;
+  max-width: 100px;
+}
+
+.hotel-section {
+  padding: 50px 0;
+  border-top: 1px solid #ddd;
+}
+
+.hotel-section h4 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.hotel-section p {
+  font-size: 16px;
+  color: #555;
+}
+
+.container {
+  padding: 0 15px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Updated Partner Logos Container */
+.partner-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.partner-item {
+  width: 200px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+ 
+}
+
+.partner-item:hover {
+  transform: scale(1.15);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+ 
+}
+
+.partner-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+    /* ===== FOOTER ===== */
+.footer {
+  background-color: #000000;
+  color: #cccccc;
+  padding: 4rem 0 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-top: auto; /* Push footer to bottom */
+
+}
+
+.footer p {
+  color: #cccccc;
+}
+
+.footer hr {
+  background-color: #333333;
+}
+
+.footer i {
+  vertical-align: middle;
+}
+
+.footer a {
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer a:hover {
+  color: #ffffff;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: #007bff;
+  transform: translateY(-3px);
+}
+/*
+   =================================================
+   | Partner Logo Section: Auto-Sliding Marquee |
+   =================================================
+*/
+
+/* 1. Animation Keyframes: Moves content from right to left */
+@keyframes autoSlide {
+    /* Translate the entire row by 50% of its width (the length of one set of logos) */
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } 
+}
+
+
+/* 2. Wrapper: Hides overflow and defines scroll area */
+.logo-scroll-wrapper {
+    /* Critical: Hides the duplicated logos that are waiting to slide in */
+    overflow: hidden; 
+    padding-bottom: 20px; 
+    
+    /* Disable all manual scroll properties */
+    scroll-snap-type: none; 
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    
+    /* === CRITICAL FOR THE FADE EFFECT === */
+    /* Use a linear gradient mask to fade the content at the left and right edges. */
+    mask-image: linear-gradient(
+        to right, 
+        transparent 0%, /* Start fully transparent (fade out) */
+        black 5%,      /* Become fully opaque at 5% of width */
+        black 95%,     /* Stay fully opaque until 95% of width */
+        transparent 100% /* End fully transparent (fade out) */
+    );
+    /* For older browser compatibility, you might add vendor prefixes 
+       (-webkit-mask-image), but modern browsers mostly support the standard mask-image. */
+}
+
+/* Rest of the marquee CSS (partner-logos-scroll-row, partner-item-box) remains the same */
+
+/* Remove scrollbar hiding rules as overflow is now hidden */
+.logo-scroll-wrapper::-webkit-scrollbar {
+    display: none; 
+}
+
+
+/* 3. Inner Row: Animation target and enforces single line */
+.partner-logos-scroll-row {
+    display: flex;
+    flex-wrap: nowrap; 
+    justify-content: flex-start; 
+    align-items: center;
+    gap: 30px; 
+    margin-top: 20px;
+    padding: 10px 0;
+    
+    /* CRITICAL: Must be wider than the wrapper to allow scrolling */
+    width: max-content; 
+    
+    /* CRITICAL: Apply the animation */
+    animation: autoSlide 40s linear infinite; /* 40s duration, continuous, no acceleration */
+}
+
+/* Pause animation on hover for better user experience */
+.partner-logos-scroll-row:hover {
+    animation-play-state: paused;
+}
+
+
+/* 4. Individual Logo Item: Consistent size and clean card styling */
+.partner-item-box {
+    /* --- FIXED DIMENSIONS FOR UNIFORMITY --- */
+    width: 200px; 
+    min-width: 200px; 
+    height: 120px; 
+    flex-shrink: 0; 
+    /* Disable scroll-snap as animation is active */
+    scroll-snap-align: none; 
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background: #ffffff; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); 
+    transition: all 0.3s ease;
+}
+
+.partner-item-box:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+    transform: none; 
+}
+
+.partner-item-box img {
+    max-width: 80%; 
+    max-height: 80%;
+    object-fit: contain;
+    filter: none; 
+    opacity: 1;
+    transition: all 0.3s;
+}
+/* These styles are now redundant or replaced by .solution-gallery-item styles
+
+.gallery-item img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(80%);
+}
+.gallery-desc {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  text-align: center;
+  padding: 8px;
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.gallery-item:hover .gallery-desc {
+  opacity: 1;
+}
+*/
+  </style>
+</head>
+
+<body id="page-top" ng-controller="CatalogController">
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm">
+  <div class="container px-5">
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/img/company-logo3.png" alt="Qubit Asia Logo" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Solutions</a>
+          <ul class="dropdown-menu">
+            <li><h6 class="dropdown-header">Hospitality</h6></li>
+            <li><a class="dropdown-item" href="iptv.html">QBStar (IPTV)</a></li>
+            <li><a class="dropdown-item" href="pms.html">QBPms</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><h6 class="dropdown-header">Digital Signage</h6></li>
+            <li><a class="dropdown-item" href="signage.html">QBSign</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Company</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+            <li><a class="dropdown-item" href="values.html">Our Values</a></li>
+            <li><a class="dropdown-item" href="features.html">Platform Features</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarCatalogueDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Catalogue
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarCatalogueDropdown">
+                <li><a class="dropdown-item" href="catalog.html">Hardware Catalogue</a></li>
+                <li><a class="dropdown-item" href="softwarecatalog.html">Software Catalogue</a></li>
+            </ul>
+        </li>
+        <a class="nav-link" href="contact.html" target="_blank" rel="noopener noreferrer">Contact</a>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+      <header class="masthead">
+    <div class="container" >
+      <h1 class="display-4 lh-1 mb-3">QBStar</h1>
+      <p>Interactive TV solution based on hospitality smart TV</p>
+    </div>
+  </header>
+
+
+    <section>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<div class="container py-5">
+  <div class="row align-items-center gx-5 gy-4">
+
+    <div class="col-lg-6">
+      <div class="position-relative overflow-hidden rounded-4 shadow-sm" style="transition: transform 0.3s ease; cursor: pointer;">
+        <img src="assets/img/Asaimockup (1).png" alt="QBStar AI" class="img-fluid w-100 rounded-4" style="object-fit: cover; height: 100%; max-height: 500px;">
+      </div>
+    </div>
+
+    <div class="col-lg-6 d-flex flex-column justify-content-center">
+      <h1 class="display-6 fw-semibold mb-3" style="font-family: 'Poppins', sans-serif;">
+        Seamless Guest Communication with<br class="d-none d-md-block">
+         <span style="color: orange;" >QBStar IPTV</span>
+      </h1>
+      <p class="fs-5 mb-4" style="font-family: 'Poppins', sans-serif; color: black; text-align: justify;">
+        QBStar delivers interactive IPTV solutions, 
+        designed to improve direct communication with in-room guests. Our solution serves as both an 
+        informative and entertainment hub, allowing guests to access real-time information  
+        and announcements while enjoying live television.
+      </p>
+    </div>
+
+  </div>
+</div>
+    
+    <div class="container px-5 pt-5 pb-5"> 
+    
+    <h3 class="text-center lh-1 mb-2">QBStar Key Features</h3>
+    <p class="text-center mb-5 text-muted">
+        With over a decade worth of experience we offer value to our clients
+    </p>
+
+    <div style="background-color: #f1f1f1; padding: 4rem 2rem;">
+        
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-4 col-md-6 mb-5">
+                <div class="text-center">
+                    <i class="bi-house icon-feature text-gradient display-4 mb-3"></i>
+                    <h5 class="font-alt">TV Portal Landing Page</h5>
+                    <p class="text-muted">Customized TV Portal Landing page for branding and hotel information</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-5">
+                <div class="text-center">
+                    <i class="bi-display icon-feature text-gradient display-4 mb-3"></i>
+                    <h5 class="font-alt">TV Guide</h5>
+                    <p class="text-muted">TV channel information with category</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-5">
+                <div class="text-center">
+                    <i class="bi-qr-code icon-feature text-gradient display-4 mb-3"></i>
+                    <h5 class="font-alt">QR Code</h5>
+                    <p class="text-muted">Unique QR code for each room</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-4 col-md-6 mb-5">
+                <div class="text-center">
+                    <i class="bi-megaphone icon-feature text-gradient display-4 mb-3"></i>
+                    <h5 class="font-alt">Hotel Promotion</h5>
+                    <p class="text-muted">Promotional information can be pushed to TV in banner or full screen mode</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-5">
+                <div class="text-center">
+                    <i class="bi-cup-hot icon-feature text-gradient display-4 mb-3"></i>
+                    <h5 class="font-alt">In-Room Dining</h5>
+                    <p class="text-muted">Display the in-room dining menu by showcasing individual items or by pages</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-5">
+                <div class="text-center">
+                    <i class="bi-alarm icon-feature text-gradient display-4 mb-3"></i>
+                    <h5 class="font-alt">Wake Up Alarm</h5>
+                    <p class="text-muted">The Wake Up Alarm helps you start your day on time with customizable alarms.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-4 col-md-6 mb-5">
+                <div class="text-center">
+                    <i class="bi-wifi icon-feature text-gradient display-4 mb-3"></i>
+                    <h5 class="font-alt">WiFi Information</h5>
+                    <p class="text-muted">Display the WiFi information on the TV seamlessly</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-5">
+                <div class="text-center">
+                    <i class="bi-geo-alt icon-feature text-gradient display-4 mb-3"></i>
+                    <h5 class="font-alt">Local Attractions</h5>
+                    <p class="text-muted">Highlight local places of interest from crowd-pleasers to hidden gems</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-5">
+                <div class="text-center">
+                    <i class="bi-sun icon-feature text-gradient display-4 mb-3"></i>
+                    <h5 class="font-alt">Weather</h5>
+                    <p class="text-muted">Local weather forecast information on the TV</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-4 col-md-6 mb-0"> 
+                <div class="text-center">
+                    <i class="bi-globe-central-south-asia icon-feature text-gradient display-4 mb-3"></i>
+                    <h5 class="font-alt">World Clock</h5>
+                    <p class="text-muted">World Clock display for international travelers</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-0">
+                <div class="text-center">
+                    <i class="bi-journal icon-feature text-gradient display-4 mb-3"></i>
+                    <h5 class="font-alt">Hotel Compendium</h5>
+                    <p class="text-muted">Hotel directory guide from A to Z</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-0">
+                <div class="text-center">
+                    <i class="bi-house icon-feature text-gradient display-4 mb-3"></i>
+                    <h5 class="font-alt">Hotel Information</h5>
+                    <p class="text-muted">Hotel information page on TV</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+  
+    <div class="container px-5 py-5">
+        <h3 class="text-center fw-bold mb-2">QBStar Solutions</h3>
+        <p class="text-center fs-6 mb-3 text-muted">Browse through our customized interactive solutions for enjoyable hospitality and services</p>
+
+        <div id="solutionCarousel" class="carousel slide" data-bs-ride="carousel">
+            
+            <div class="carousel-indicators mb-3">
+                <button type="button" data-bs-target="#solutionCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#solutionCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#solutionCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
+            <div class="carousel-inner">
+                
+                <div class="carousel-item active">
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-lg-4 col-md-6 col-12">
+                          <a href="#" class="solution-gallery-item d-block position-relative" 
+                             data-bs-toggle="modal" data-bs-target="#imageModal"
+                             data-full-src="assets/img/kloe-gui.png" 
+                             data-title="Sample 1">
+                            <img src="assets/img/kloe-gui.png" class="img-fluid rounded shadow-lg" alt="Sample 1">
+                            <div class="gallery-desc">Sample 1</div>
+                          </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                          <a href="#" class="solution-gallery-item d-block position-relative" 
+                             data-bs-toggle="modal" data-bs-target="#imageModal"
+                             data-full-src="assets/iptv/smith.png" 
+                             data-title="Sample 2">
+                            <img src="assets/iptv/smith.png" class="img-fluid rounded shadow-lg" alt="Sample 2">
+                            <div class="gallery-desc">Sample 2</div>
+                          </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                          <a href="#" class="solution-gallery-item d-block position-relative" 
+                             data-bs-toggle="modal" data-bs-target="#imageModal"
+                             data-full-src="assets/img/pantai.png" 
+                             data-title="Sample 3">
+                            <img src="assets/img/Photos From Site/AsaiTemplate.jpg" class="img-fluid rounded shadow-lg" alt="Sample 3">
+                            <div class="gallery-desc">Sample 3</div>
+                          </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-lg-4 col-md-6 col-12">
+                          <a href="#" class="solution-gallery-item d-block position-relative" 
+                             data-bs-toggle="modal" data-bs-target="#imageModal"
+                             data-full-src="assets/img/waterfront-gui.png" 
+                             data-title="Sample 4">
+                            <img src="assets/img/waterfront-gui.png" class="img-fluid rounded shadow-lg" alt="Sample 4">
+                            <div class="gallery-desc">Sample 4</div>
+                          </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                          <a href="#" class="solution-gallery-item d-block position-relative" 
+                             data-bs-toggle="modal" data-bs-target="#imageModal"
+                             data-full-src="assets/iptv/plc3.png" 
+                             data-title="Sample 5">
+                            <img src="assets/iptv/plc3.png" class="img-fluid rounded shadow-lg" alt="Sample 5">
+                            <div class="gallery-desc">Sample 5</div>
+                          </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                          <a href="#" class="solution-gallery-item d-block position-relative" 
+                             data-bs-toggle="modal" data-bs-target="#imageModal"
+                             data-full-src="assets/iptv/Bangi.png" 
+                             data-title="Sample 6">
+                            <img src="assets/iptv/Bangi.png" class="img-fluid rounded shadow-lg" alt="Sample 6">
+                            <div class="gallery-desc">Sample 6</div>
+                          </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-lg-4 col-md-6 col-12">
+                          <a href="#" class="solution-gallery-item d-block position-relative" 
+                             data-bs-toggle="modal" data-bs-target="#imageModal"
+                             data-full-src="assets/iptv/intercon.png" 
+                             data-title="Sample 7">
+                            <img src="assets/iptv/intercon.png" class="img-fluid rounded shadow-lg" alt="Sample 7">
+                            <div class="gallery-desc">Sample 7</div>
+                          </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                          <a href="#" class="solution-gallery-item d-block position-relative" 
+                             data-bs-toggle="modal" data-bs-target="#imageModal"
+                             data-full-src="assets/iptv/samsama.png" 
+                             data-title="Sample 8">
+                            <img src="assets/iptv/samsama.png" class="img-fluid rounded shadow-lg" alt="Sample 8">
+                            <div class="gallery-desc">Sample 8</div>
+                          </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                          <a href="#" class="solution-gallery-item d-block position-relative" 
+                             data-bs-toggle="modal" data-bs-target="#imageModal"
+                             data-full-src="assets/iptv/seafest.png" 
+                             data-title="Sample 9">
+                            <img src="assets/iptv/seafest.png" class="img-fluid rounded shadow-lg" alt="Sample 9">
+                            <div class="gallery-desc">Sample 9</div>
+                          </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <button class="carousel-control-prev d-none d-md-block" type="button" data-bs-target="#solutionCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next d-none d-md-block" type="button" data-bs-target="#solutionCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+
+        </div>
+        
+        <div class="text-center mt-5">
+    <a href="softwarecatalog.html" class="btn btn-outline-dark px-5 py-2 rounded-3 fw-bold">
+        Explore Full Catalogue
+    </a>
+</div>
+    </div>
+    <section id="partners" class="py-4 bg-light">
+<section id="partners" class="py-4 bg-light">
+    <div class="container">
+        <h3 class="section-header mb-4 text-center">Trusted Partner of</h3> 
+        
+        <div class="logo-scroll-wrapper">
+            <div class="partner-logos-scroll-row" data-aos="fade-up" data-aos-delay="200">
+                
+                <div class="partner-item-box"><img src="assets/img/main/accor-logo.png" alt="Accor Logo" /></div>
+                <div class="partner-item-box"><img src="assets/img/main/hilton.png" alt="Hilton Logo" /></div>
+                <div class="partner-item-box"><img src="assets/img/main/wyndham.png" alt="Wyndham Logo" /></div>
+                <div class="partner-item-box"><img src="assets/img/main/marriot.png" alt="Marriott Logo" /></div>
+                <div class="partner-item-box"><img src="assets/img/main/petronas.png" alt="Petronas Logo" /></div>
+                <div class="partner-item-box"><img src="assets/img/main/samsama.png" alt="Samasam Logo" /></div>
+                <div class="partner-item-box"><img src="assets/img/main/pantaihospital.png" alt="Pantai Logo" /></div>
+                <div class="partner-item-box"><img src="assets/img/main/ickl.png" alt="Pantai Logo" /></div>
+                
+                <div class="partner-item-box"><img src="assets/img/main/accor-logo.png" alt="Accor Logo" /></div>
+                <div class="partner-item-box"><img src="assets/img/main/hilton.png" alt="Hilton Logo" /></div>
+                <div class="partner-item-box"><img src="assets/img/main/wyndham.png" alt="Wyndham Logo" /></div>
+                <div class="partner-item-box"><img src="assets/img/main/marriot.png" alt="Marriott Logo" /></div>
+                <div class="partner-item-box"><img src="assets/img/main/petronas.png" alt="Petronas Logo" /></div>
+                <div class="partner-item-box"><img src="assets/img/main/samsama.png" alt="Samasam Logo" /></div>
+                <div class="partner-item-box"><img src="assets/img/main/pantaihospital.png" alt="Pantai Logo" /></div>
+                <div class="partner-item-box"><img src="assets/img/main/ickl.png" alt="Pantai Logo" /></div>
+                </div>
+        </div>
+        
+    </div>
+</section>
+    <section id="partners" class="py-1 bg-light"></section>
+<section class="py-5 text-white d-flex align-items-center position-relative" style="background: url('assets/img/BAnner.jpg') center center/cover no-repeat; min-height: 350px;">
+    
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(2px); "></div>
+    
+    <div class="container position-relative z-2 px-4">
+        <div class="row">
+            <div class="col-lg-8">
+                
+                <h2 class="display-4 fw-bold mb-3 text-shadow">
+                    Upgrade your Hospitality<br>Experience Today
+                </h2>
+                
+                <p class="lead mb-4 text-shadow" style="font-size: 1.1rem;">
+                    Together, let's transform the way you serve your guests with a bespoke solution
+                </p>
+                
+                <a href="contact.html" class="btn btn-outline-light btn-lg" style="border-radius: 8px;">
+                    Get a quotation now
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer" style="background-color: #000000;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <img src="assets/img/company-logo3.png" alt="Qubit Asia Logo" class="mb-4" height="50">
+                <p style="color: #cccccc;">Transforming hospitality experiences through innovative technology solutions.</p>
+            </div>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h5 class="text-white mb-4">Contact Info</h5>
+                <p style="color: #cccccc;"><i class="bi bi-geo-alt-fill me-2"></i>31, Jalan BK 5a/3a, Bandar Kinrara 5, 47180 Puchong, Selangor, Malaysia</p>
+                <p style="color: #cccccc;"><i class="bi bi-telephone-fill me-2"></i>03-8075 0659</p>
+                <p style="color: #cccccc;"><i class="bi bi-envelope-fill me-2"></i>hello@qubit.asia</p>
+            </div>
+            <div class="col-lg-4">
+                <h5 class="text-white mb-4">Connect With Us</h5>
+                <a href="https://www.linkedin.com/company/qubit-interactive/" target="_blank" class="social-icon">
+                    <i class="bi bi-linkedin" style="color: #ffffff;"></i>
+                </a>
+            </div>
+        </div>
+        <hr class="my-4" style="background-color: #333333;">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="mb-0" style="color: #cccccc;">© 2023 Qubit Asia. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl"> 
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageModalLabel">Example Template</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img id="modalImage" src="" class="img-fluid" alt="Full View of Solution">
+      </div>
+      <div class="modal-footer">
+        <span id="modalTitle" class="me-auto fw-bold"></span>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({ once: true });
+        });
+    </script>
+    <script src="js/scripts.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const imageModal = document.getElementById('imageModal');
+            
+            if (imageModal) {
+                // Listen for the 'show.bs.modal' event fired just before the modal opens
+                imageModal.addEventListener('show.bs.modal', function (event) {
+                    // Button that triggered the modal (the <a> link with class solution-gallery-item)
+                    const button = event.relatedTarget; 
+
+                    // Extract info from data-* attributes
+                    const fullSrc = button.getAttribute('data-full-src');
+                    const title = button.getAttribute('data-title');
+
+                    // Update the modal's content
+                    const modalImage = imageModal.querySelector('#modalImage');
+                    const modalTitleSpan = imageModal.querySelector('#modalTitle');
+
+                    // Set the full image source
+                    modalImage.src = fullSrc;
+                    
+                    // Set the description/title
+                    modalTitleSpan.textContent = title;
+                });
+            }
+        });
+    </script>
+    </body>
+</html>

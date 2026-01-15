@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="About Qubit Asia" />
+  <meta name="author" content="Qubit Asia" />
+  <title>Our Values | Qubit Asia</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa, #e4ebf5);
+      margin: 0;
+      padding: 0;
+    }
+
+
+  .navbar {
+  background-color: rgba(0, 0, 0, 0.85);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+}
+
+.navbar-brand img {
+  height: 60px;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-item.active .nav-link {
+  color: #007bff;
+}
+
+.dropdown-menu {
+  background-color: #1f1f1f;
+  border: none;
+}
+
+.dropdown-menu .dropdown-item {
+  color: white;
+  transition: background 0.2s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #343a40;
+}
+
+.dropdown-header {
+  color: #adb5bd;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+/* Improve visibility of navbar toggler icon on dark background */
+.navbar-toggler {
+  border: none;
+  outline: none;
+  padding: 0.5rem 0.75rem;
+}
+
+.navbar-toggler-icon {
+  width: 2rem;
+  height: 2rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  /* High-contrast white hamburger icon */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+    header.masthead {
+      background: url('assets/img/Valuee.png') no-repeat center center;
+      background-size: cover;
+      height: 80vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    header.masthead::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      backdrop-filter: blur(6px);
+      background-color: rgba(0, 0, 0, 0.55);
+      z-index: 1;
+    }
+
+    header.masthead .container {
+      position: relative;
+      z-index: 2;
+      color: white;
+    }
+
+    header h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: x-large;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+
+    .section-header p {
+      font-size: 1.2rem;
+      color: #6c757d;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+      padding: 10px 30px;
+      font-size: 1.1rem;
+      border-radius: 25px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05);
+    }
+
+    /* Values Section */
+    
+    /* ADDED FOR EQUAL HEIGHT CARDS */
+    .row.g-4 {
+      /* Make the row a flex container */
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .row.g-4 > [class*='col'] {
+      /* Make each column a flex container so the card can stretch */
+      display: flex;
+    }
+    /* END ADDED STYLES */
+
+    .value-card {
+      /* This is crucial for the card to fill the height of its parent column */
+      height: 100%; 
+      background-color: #fff;
+      border: 1px solid #eaeaea;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .value-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .value-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 70px;
+      height: 70px;
+      background-color: #f3f4f6;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      transition: background-color 0.3s ease;
+    }
+
+    .value-icon i {
+      color: #4c6ef5;
+    }
+
+    .value-card:hover .value-icon {
+      background-color: #e0e7ff;
+    }
+
+    .value-card h4 {
+      font-size: 1.3rem;
+      color: #333;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .value-card p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 992px) {
+      .value-card {
+        padding: 2.5rem;
+      }
+
+      .value-icon {
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .value-card {
+        padding: 2rem;
+      }
+    }
+
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background-color: #000000;
+      color: #cccccc;
+      padding: 4rem 0 2rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-top: auto; /* Push footer to bottom */
+
+    }
+
+    .footer p {
+      color: #cccccc;
+    }
+
+    .footer hr {
+      background-color: #333333;
+    }
+
+    .footer i {
+      vertical-align: middle;
+    }
+
+    .footer a {
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer a:hover {
+      color: #ffffff;
+    }
+
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      margin-right: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+      background: #007bff;
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+
+<body id="page-top" ng-controller="CatalogController">
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm">
+  <div class="container px-5">
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/img/company-logo3.png" alt="Qubit Asia Logo" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Solutions</a>
+          <ul class="dropdown-menu">
+            <li><h6 class="dropdown-header">Hospitality</h6></li>
+            <li><a class="dropdown-item" href="iptv.html">QBStar (IPTV)</a></li>
+            <li><a class="dropdown-item" href="pms.html">QBPms</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><h6 class="dropdown-header">Digital Signage</h6></li>
+            <li><a class="dropdown-item" href="signage.html">QBSign</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Company</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+            <li><a class="dropdown-item" href="values.html">Our Values</a></li>
+            <li><a class="dropdown-item" href="features.html">Platform Features</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarCatalogueDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Catalogue
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarCatalogueDropdown">
+                <li><a class="dropdown-item" href="catalog.html">Hardware Catalogue</a></li>
+                <li><a class="dropdown-item" href="softwarecatalog.html">Software Catalogue</a></li>
+            </ul>
+        </li>
+        <a class="nav-link" href="contact.html" target="_blank" rel="noopener noreferrer">Contact</a>
+      </ul>
+    </div>
+  </div>
+</nav>
+<header class="masthead">
+  <div class="container">
+    <h2 class="display-4 lh-1 mb-3">Our Values</h2>
+    <p>At Qubit Asia, we prioritize innovation and service excellence in every solution we provide to the hospitality industry.</p>
+  </div>
+</header>
+
+<section class="container my-5" data-aos="fade-up">
+  <div class="section-header text-center mb-5">
+    <h2 class="display-4 fw-bold text-dark">Our Values</h2>
+    <p class="lead text-muted"></p>
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+    <div class="col">
+      <div class="value-card p-4 shadow-lg border-light rounded-4">
+        <div class="value-icon mb-3">
+          <i class="bi bi-gear-fill fs-2 text-primary"></i>
+        </div>
+        <h4 class="fw-semibold text-dark mb-3">Upgrade from RF to Hybrid / Full-fledged IPTV</h4>
+        <p>Seamlessly upgrade from 1-way broadcast to a 2-way interactive IPTV solution with hybrid or full IPTV services, tailored to room connectivity options.</p>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="value-card p-4 shadow-lg border-light rounded-4">
+        <div class="value-icon mb-3">
+          <i class="bi bi-palette fs-2 text-success"></i>
+        </div>
+        <h4 class="fw-semibold text-dark mb-3">Full Customization Support for Branding & Service Automation</h4>
+        <p>Offering comprehensive customization to meet hotel-specific needs, we provide scalable solutions for future expansions, optimizing operational efficiency.</p>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="value-card p-4 shadow-lg border-light rounded-4">
+        <div class="value-icon mb-3">
+          <i class="bi bi-wallet fs-2 text-warning"></i>
+        </div>
+        <h4 class="fw-semibold text-dark mb-3">Very Low Initial Set-Up Cost with Dedicated Technical Support</h4>
+        <p>We have significantly reduced initial investment costs, making IPTV services more affordable for the hospitality industry, with ongoing technical support at a low subscription fee.</p>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="value-card p-4 shadow-lg border-light rounded-4">
+        <div class="value-icon mb-3">
+          <i class="bi bi-person-circle fs-2 text-info"></i>
+        </div>
+        <h4 class="fw-semibold text-dark mb-3">Local R&D Team Support</h4>
+        <p>Our dedicated in-house R&D teams in Malaysia & South Korea focus on developing and optimizing smart TV solutions, ensuring service reliability and customization for the hospitality sector.</p>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="value-card p-4 shadow-lg border-light rounded-4">
+        <div class="value-icon mb-3">
+          <i class="bi bi-tv fs-2 text-danger"></i>
+        </div>
+        <h4 class="fw-semibold text-dark mb-3">Pre-Integrated with All Hospitality Smart TV Brands</h4>
+        <p>Our solutions are pre-integrated with all major hospitality smart TV brands, including LG and Samsung, ensuring compatibility across multiple devices and eliminating vendor lock-in.</p>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="value-card p-4 shadow-lg border-light rounded-4">
+        <div class="value-icon mb-3">
+          <i class="bi bi-clipboard-data fs-2 text-primary"></i>
+        </div>
+        <h4 class="fw-semibold text-dark mb-3">PMS Integrated Service</h4>
+        <p>Our PMS integration streamlines services, automating processes and eliminating redundant tasks for the front desk team, while working closely with hotel PMS vendors to ensure seamless integration.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<footer class="footer" style="background-color: #000000;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <img src="assets/img/company-logo3.png" alt="Qubit Asia Logo" class="mb-4" height="50">
+                <p style="color: #cccccc;">Transforming hospitality experiences through innovative technology solutions.</p>
+            </div>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h5 class="text-white mb-4">Contact Info</h5>
+                <p style="color: #cccccc;"><i class="bi bi-geo-alt-fill me-2"></i>31, Jalan BK 5a/3a, Bandar Kinrara 5, 47180 Puchong, Selangor, Malaysia</p>
+                <p style="color: #cccccc;"><i class="bi bi-telephone-fill me-2"></i>03-8075 0659</p>
+                <p style="color: #cccccc;"><i class="bi bi-envelope-fill me-2"></i>hello@qubit.asia</p>
+            </div>
+            <div class="col-lg-4">
+                <h5 class="text-white mb-4">Connect With Us</h5>
+                <a href="https://www.linkedin.com/company/qubit-interactive/" target="_blank" class="social-icon">
+                    <i class="bi bi-linkedin" style="color: #ffffff;"></i>
+                </a>
+            </div>
+        </div>
+        <hr class="my-4" style="background-color: #333333;">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="mb-0" style="color: #cccccc;">© 2023 Qubit Asia. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    once: true // animation will happen only once
+  });
+</script>
+</body>
+
+</html>
